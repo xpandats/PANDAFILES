@@ -1,0 +1,42 @@
+[INFO]:PR1::BWN_KAN_53047_2S_GN_1P_NetworkMonitor_https://www.irctcipay.com/pgui/jsp/surchargelocale?request_localeA=&defaultLanguageA=_URL: https://www.irctc.co.in/eticketing/protected/mapps1/bookingInitPayment/mlnmr6bl?insurenceApplicable=
+Payload:
+{
+  "bankId": 113,
+  "txnType": 1,
+  "paramList": [],
+  "amount": "32.25",
+  "transationId": 0,
+  "txnStatus": 1
+}
+Response:
+{
+  "transationId": "0",
+  "bankId": "113",
+  "txnType": "0",
+  "txnStatus": "12",
+  "txnDate": "2026-02-15T16:27:09.961",
+  "amount": "32.25",
+  "timeStamp": "2026-02-15T16:27:10.006",
+  "upiModeOpted": "0",
+  "remainingBalance": "0.0",
+  "loyaltyNum": "0",
+  "withoutOTP": "false",
+  "paramList": [
+    {
+      "key": "TXN",
+      "value": "100006376254948"
+    },
+    {
+      "key": "REDIRECT",
+      "value": "TRUE"
+    },
+    {
+      "key": "SEGREGATE_BOOKING_ENQUIRY",
+      "value": "1"
+    },
+    {
+      "key": "MIN_PAYMENT_DURATION",
+      "value": "10000"
+    }
+  ]
+}
