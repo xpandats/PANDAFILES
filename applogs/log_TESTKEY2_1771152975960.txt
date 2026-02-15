@@ -1,0 +1,37 @@
+[INFO]:PR1::BWN_KAN_53047_2S_GN_1P_NetworkMonitor_https://www.irctc.co.in/nget/train-search_URL: https://www.irctc.co.in/eticketing/protected/mapps1/fetchJourneyDetails
+Payload:
+NULL
+Response:
+{
+  "fevJourneyLists": [
+    {
+      "trainNumber": "15018",
+      "fromStnCode": "GORAKHPUR JN - GKP",
+      "toStnCode": "LOKMANYATILAK T - LTT",
+      "cls": "3A",
+      "quota": "GN",
+      "id": "100001166272093",
+      "recent": "false"
+    },
+    {
+      "fromStnCode": "BWN",
+      "toStnCode": "KAN",
+      "id": "2",
+      "recent": "true"
+    },
+    {
+      "fromStnCode": "KAN",
+      "toStnCode": "BWN",
+      "id": "0",
+      "recent": "true"
+    },
+    {
+      "fromStnCode": "BWN",
+      "toStnCode": "KAN",
+      "id": "1",
+      "recent": "true"
+    }
+  ],
+  "displayCount": "10",
+  "timeStamp": "2026-02-15T16:26:13.724"
+}
