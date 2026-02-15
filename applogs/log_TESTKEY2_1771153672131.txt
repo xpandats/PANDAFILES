@@ -1,0 +1,7 @@
+[INFO]:PR1::BWN_KAN_53047_2S_GN_1P_NetworkMonitor_https://www.irctc.co.in/nget/train-search_URL: https://www.irctc.co.in/wcDi0nxi9/MIDF/P0QPg/3Dp3pX5NruSiGch5E3/DS92/Vi/xUIw4pNHkB
+Payload:
+NULL
+Response:
+{
+  "success": true
+}
