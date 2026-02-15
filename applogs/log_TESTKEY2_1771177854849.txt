@@ -1,0 +1,48 @@
+[INFO]:PR3::BWN_KAN_53047_2S_GN_1P_NetworkMonitor_https://www.irctcipay.com/pgui/jsp/surchargePaymentPage.jsp_URL: https://www.irctcipay.com/pgui/jsp/validateTransactionLimitAction
+Payload:
+------WebKitFormBoundaryWSxe7B3qa50BAYJl
+Content-Disposition: form-data; name="token"
+
+45OR5B8HFEX52D0CD8L1O08YQ1Z5X343
+------WebKitFormBoundaryWSxe7B3qa50BAYJl
+Content-Disposition: form-data; name="vpa"
+
+ddsd12@ybl
+------WebKitFormBoundaryWSxe7B3qa50BAYJl
+Content-Disposition: form-data; name="cardNumber"
+
+null
+------WebKitFormBoundaryWSxe7B3qa50BAYJl
+Content-Disposition: form-data; name="paymentType"
+
+UP
+------WebKitFormBoundaryWSxe7B3qa50BAYJl
+Content-Disposition: form-data; name="mopType"
+
+UP
+------WebKitFormBoundaryWSxe7B3qa50BAYJl--
+
+Response:
+{
+  "browserName": null,
+  "browserVersion": null,
+  "cardHolderType": null,
+  "cardNumber": "null",
+  "imageData": null,
+  "isQr": null,
+  "isUOV": null,
+  "mandateType": null,
+  "mopType": "UP",
+  "paymentType": "UP",
+  "paymentsRegion": null,
+  "pgRefHash": null,
+  "pgRefNum": null,
+  "responseCode": null,
+  "responseFields": null,
+  "responseMessage": null,
+  "transactionStatus": null,
+  "txnType": null,
+  "uovUrl": null,
+  "vpa": "ddsd12@ybl",
+  "vpaPhone": null
+}
