@@ -1,0 +1,25 @@
+[INFO]:PR3::NDLS_CPR_12566_3A_PT_2P_NetworkMonitor_https://www.irctc.co.in/nget/train-search_URL: https://www.irctc.co.in/eticketing/protected/mapps1/recentTxnsDetails
+Payload:
+NULL
+Response:
+{
+  "lastTxnList": [
+    {
+      "txnType": "Last Transactions",
+      "reservationId": "100006373425312",
+      "boardingDate": "2026-04-15T00:00:00",
+      "trainNumber": "12566",
+      "trainName": "BIHAR S KRANTI",
+      "fromStation": "NDLS",
+      "toStation": "CPR",
+      "bookingStatus": "Payment Initiated",
+      "bookingDate": "2026-02-14T10:42:53",
+      "reservationMode": "IRCTC WEBSITE",
+      "bookingClass": "3A",
+      "transactionId": "100006373425312"
+    }
+  ],
+  "upcomingjourneyInfoMsg": "No upcoming journeys",
+  "displayDisable": "false",
+  "timeStamp": "2026-02-18T10:05:26.502"
+}
