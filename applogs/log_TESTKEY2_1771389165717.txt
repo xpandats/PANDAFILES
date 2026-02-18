@@ -1,0 +1,7 @@
+[INFO]:PR1::HWH_ST_12834_SL_PT_2P_NetworkMonitor_https://www.irctc.co.in/nget/payment/bkgPaymentOptions_URL: https://www.irctc.co.in/B2ORvWa9/6dHxJ1E/N3yTVJN/gT/ta5tfh5Jk9upbL/Zxs-fQE/A2hjbQU0/fm0B
+Payload:
+NULL
+Response:
+{
+  "success": true
+}
