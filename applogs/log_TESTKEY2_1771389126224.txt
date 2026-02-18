@@ -1,0 +1,46 @@
+[INFO]:PR2::NDLS_CPR_12566_3A_PT_2P_NetworkMonitor_https://www.irctc.co.in/nget/booking/psgninput_URL: https://www.irctc.co.in/eticketing/protected/mapps1/masterpsgnlistenquiry
+Payload:
+NULL
+Response:
+{
+  "passengerDetailList": [
+    {
+      "slno": "1",
+      "masterPassengerName": "GANESH S BELDAR",
+      "berthPreference": "NC",
+      "foodPreference": "VEG",
+      "srCtznConc": "NOCONC",
+      "masterListId": "100001166168231",
+      "idCardType": " ",
+      "idCardNumber": " ",
+      "gender": "M",
+      "dateOfBirth": "1963-01-01T00:00:00",
+      "age": "63",
+      "name": "GANESH S BELDAR",
+      "verificationStatus": "0",
+      "verificationStatusString": " ",
+      "verificationCode": "Sucess",
+      "concessionCode": "1"
+    },
+    {
+      "slno": "1",
+      "masterPassengerName": "KASHI G BELDAR",
+      "berthPreference": "NC",
+      "foodPreference": "VEG",
+      "srCtznConc": "NOCONC",
+      "masterListId": "100001166079398",
+      "idCardType": "UNIQUE_ICARD",
+      "idCardNumber": " ",
+      "gender": "M",
+      "dateOfBirth": "1998-05-02T05:30:00",
+      "age": "27",
+      "name": "KASHI G BELDAR",
+      "verificationStatus": "1",
+      "verificationStatusString": "Verified",
+      "verificationCode": "Technical Error",
+      "concessionCode": "1"
+    }
+  ],
+  "maxAllowedPsgn": "10",
+  "timeStamp": "2026-02-18T10:01:39.916"
+}
