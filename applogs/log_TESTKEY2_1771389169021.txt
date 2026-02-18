@@ -1,0 +1,2025 @@
+[INFO]:PR1::HWH_ST_12834_SL_PT_2P_NetworkMonitor_https://www.irctcipay.com/pgui/jsp/surchargelocale?request_localeA=&defaultLanguageA=_URL: https://www.irctcipay.com/pgui/jsp/surchargelocale?request_localeA=&defaultLanguageA=
+Payload:
+NULL
+Response:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- added by UAV -->
+
+
+
+
+
+
+<script>
+	var slot=("false"=="false"?false:true);
+	var showPointsPeYesBank = ("true"=="false"?'N':'Y');
+	var showVouchaGram = ("true"=="false"?'N':'Y');
+	var showAdvantageClub = ("true"=="false"?'N':'Y');
+	var showAutopeVoucher = ("false"=="false"?'N':'Y');
+	var showAutopeEasyTatkal = ("false"=="false"?'N':'Y');
+	var ccClSurcharge = ("1.00");
+	var showUpiOverVoice = "ACTIVE";
+	if(showUpiOverVoice == "INACTIVE"){
+		showUpiOverVoice = 'N';
+	}else{
+		showUpiOverVoice = 'Y';
+	}
+</script>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="favicon.png">
+<title>IRCTC iPay</title>
+<link rel="stylesheet" href="../css/surchargePaymentPage.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style type="text/css">
+.validCardError{
+	visibility: hidden;
+}
+.marginTop{
+	margin-bottom: 20px;
+}
+.opacityMob{
+opacity: 0.1;
+}
+.actvBtnCreditDebit{
+	pointer-events: auto !important;
+	background: #012f6f !important;
+	border:2px solid #012f6f !important;
+}
+input[type=text].password-autocomplete-disabler {
+    position: absolute !important;
+    left: -10000px !important;
+    top: -10000px !important;
+}
+.pointerEventNone{
+	pointer-events: none !important;
+	background:#ccc !important;
+	border:2px solid #ccc !important;
+}
+.loader1{
+	display:none;
+}
+.radioError{
+	color: red;
+	margin: 0;
+}
+.radioErrorDiv{
+	    min-height: 17px;
+    font-size: 12px;
+}
+.marginBtm0{
+	margin-bottom: 0 !important;
+}
+.autoDebitP{
+	padding-left: 17px;
+    color: grey;
+    font-size: 11px;
+    margin-bottom: 0;
+}
+#sidebar dl dd big {
+	font-size: 12px;
+}
+.nbSection:after {
+    content: "";
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+.mini-loading {
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  position: relative;
+  border-radius:50%;
+  border:4px solid lightblue;
+  border-color:#1e70c9 lightblue;
+  box-sizing:border-box;
+  animation:loading 0.7s linear infinite;
+}
+@keyframes loading{
+  0%{
+	transform:rotate(0deg);
+}
+  100%{
+	transform:rotate(360deg);
+  }
+}
+
+.pspRow {
+  display: flex;
+}
+
+.pspCol {
+  flex: 33.33%;
+  /* padding: 5px; */
+}
+</style>
+<script type="text/javascript" src="../js/surchargePaymentPage.js"></script>
+<script type="text/javascript">
+var tabhide=0;
+var timeInterval;
+var timer = setInterval(function() {
+	timeInterval -= 1000;
+	window.status = time(timeInterval);
+	if (timeInterval <= 0) {
+		clearInterval(timer);
+		if(xhrUpi){
+			xhrUpi.abort();
+		}
+		top.location = "sessionTimeout";
+	}
+}, 1000);
+
+function time(ms) {
+	var t = '';
+	var sec = Math.floor(ms / 1000);
+	ms = ms % 1000;
+
+	var min = Math.floor(sec / 60);
+	sec = sec % 60;
+	t = two(sec);
+
+	var hr = Math.floor(min / 60);
+	min = min % 60;
+	t = two(min) + ":" + t;
+
+	// document.getElementById("lblSessionTime").innerText = t;
+    if(document.getElementById("sidebarTimer")) {
+            document.getElementById("sidebarTimer").innerText = t;
+    }
+
+	document.getElementById("sessionTImeForQr").innerText = t;
+	/*
+	document.getElementById("sessionTimeoutNewCards").innerText = t;
+	document.getElementById("sessionTimeoutNewAD").innerText = t;
+	document.getElementById("sessionTimeoutNewNB").innerText = t;
+	document.getElementById("sessionTimeoutNewUP").innerText = t;
+	document.getElementById("sessionTimeoutNewUV").innerText = t;
+	*/
+
+	var payMode = document.getElementById("payModeId").value;
+	if(payMode != "UPI"){
+		document.getElementById("sessionTimeoutNewCards").innerText = t;
+		document.getElementById("sessionTimeoutNewAD").innerText = t;
+		document.getElementById("sessionTimeoutNewNB").innerText = t;
+
+	}else{
+		document.getElementById("sessionTimeoutNewUV").innerText = t;
+	}
+	document.getElementById("sessionTimeoutNewUP").innerText = t;
+
+	return "You session will timeout in " + t + " minutes.";
+}
+
+function two(x) {
+	return ((x > 9) ? "" : "0") + x
+}
+
+function updateCheckBoxValue(){
+	console.log("Inside update check box ");
+
+	if(document.getElementById('cardsaveflag2').checked){
+		document.getElementById('tokenizeCard').value = "Y";
+	}else{
+		document.getElementById('tokenizeCard').value = "N";
+	}
+
+	console.log("Inside update check box after updating " +  document.getElementById('tokenizeCard').value);
+}
+function displayDefault(){
+	paymentOptionString = "{&quot;surcharge_dc&quot;:&quot;123.13&quot;,&quot;nbMopType&quot;:&quot;AU Small Finance Bank,Airtel Payments Bank,Allahabad Bank,Andhra Bank,Axis Bank,Axis Bank Corporate,Bandhan Bank,Bank Of India,Bank Of Maharashtra,Bank of Baroda,Bank of Baroda Corporate,COSMOS Bank,Canara Bank,Catholic Syrian Bank,Central Bank Of India,City Union Bank,Corporation Bank,Cosmos Co-operative Bank,DCB Bank,Dena Bank,Deutsche Bank,Development Bank of Singapore,Dhanlaxmi Bank - Corporate Banking,Dhanlaxmi_Bank,ESAF Small Finance Bank,Equitas Small Finance Bank,Federal Bank,HDFC Bank,ICICI Bank,IDBI Bank,IDFC FIRST Bank,Icici Bank Corporate,Indian Bank,Indian Overseas Bank,Indusind Bank,Jammu And Kashmir Bank,Jana Small Finance Bank,Janata Sahakari Bank Pune,Karnatka Bank Ltd,Karur Vysya Bank,Kotak Bank,Lakshmi Vilas Bank Corporate,Lakshmi Vilas Bank NetBanking,Mehsana Urban Co-operative Bank,NKGSB Co-operative Bank,North East Small Finance Bank,Oriental Bank Of Commerce,Punjab And Sind Bank,Punjab National Bank,Punjab National Bank Corporate,RBL Bank - Corporate Banking,Ratnakar Bank,Saraswat Co-operative Bank,Shamrao Vithal Co Bank,South Indian Bank,Standard Chartered Bank,State Bank Of India,Suryoday Small Finance Bank,Syndicate Bank,Tamilnad Mercantile Bank,Tamilnadu State Apex Co-operative Bank,Thane Janata Sahakari Bank,UCO Bank,Union Bank Of India,United Bank Of India,Vijaya Bank,YES BANK CB,Yes Bank - Corporate Banking&quot;,&quot;pcMopTypes&quot;:&quot;&quot;,&quot;dcMopTypes&quot;:&quot;RU,VI,MC&quot;,&quot;autope&quot;:true,&quot;upiCc&quot;:true,&quot;googlePay&quot;:false,&quot;prepaidCard&quot;:false,&quot;paymentSlab&quot;:&quot;1&quot;,&quot;surcharge_pc&quot;:false,&quot;surcharge_nb&quot;:&quot;11.80&quot;,&quot;custId&quot;:&quot;100000380516118&quot;,&quot;tokenAvailable&quot;:false,&quot;merchantType&quot;:&quot;IRCTC e ticketing&quot;,&quot;iMudra&quot;:false,&quot;internationalCard&quot;:true,&quot;surcharge_cc&quot;:&quot;246.27&quot;,&quot;upiIntent&quot;:false,&quot;payMode&quot;:&quot;UPI&quot;,&quot;surcharge_ad&quot;:&quot;246.27&quot;,&quot;surcharge_wl&quot;:false,&quot;ccMopTypes&quot;:&quot;RU,VI,MC&quot;,&quot;iframeOpt&quot;:false,&quot;express_pay&quot;:false,&quot;surcharge_up&quot;:&quot;0.00&quot;,&quot;ccMop&quot;:true,&quot;upi&quot;:true,&quot;ads&quot;:true,&quot;netBanking&quot;:true,&quot;reservationid&quot;:&quot;100006382361856&quot;,&quot;autopePgFlag&quot;:true,&quot;debitWithPin&quot;:false,&quot;debitCard&quot;:true,&quot;otmMop&quot;:true,&quot;enachMop&quot;:false,&quot;autoDebit&quot;:true,&quot;creditCard&quot;:true,&quot;isAndroid&quot;:false,&quot;currencyCode&quot;:&quot;356&quot;,&quot;isIOS&quot;:false}";
+	merchantLogo = "1181281220195921";
+	var img = document.createElement('img');
+	img.classList.add("logo1");
+	img.setAttribute("id", "logo1");
+	img.src="../image/logo/"+merchantLogo+".png";
+	img.onload = function(e){
+	};
+	img.onerror = function(e) {
+	    img.src='../image/logo/defalutLogo.png';
+	};
+	// document.getElementById('leftOrder').appendChild(img);
+	// document.getElementById("radioError").style.display = "none";
+
+
+}
+function checkAquirerType(){
+	var aquirerTypeGet = "null",
+		retryPayment = false;
+		if(aquirerTypeGet != "null" && retryPayment){
+			
+		}else if(aquirerTypeGet != "null" && !retryPayment){
+			top.location = "txncancel";
+		}
+}
+checkAquirerType();
+
+
+/* Add Browser Name & Version with os name---*/
+
+(function (window) {
+    {
+        var unknown = '-';
+
+        // screen
+        var screenSize = '';
+        if (screen.width) {
+            width = (screen.width) ? screen.width : '';
+            height = (screen.height) ? screen.height : '';
+            screenSize += '' + width + " x " + height;
+        }
+
+        // browser
+        var nVer = navigator.appVersion;
+        var nAgt = navigator.userAgent;
+        var browser = navigator.appName;
+        var version = '' + parseFloat(navigator.appVersion);
+        var majorVersion = parseInt(navigator.appVersion, 10);
+        var nameOffset, verOffset, ix;
+
+        // Opera
+        if ((verOffset = nAgt.indexOf('Opera')) != -1) {
+            browser = 'Opera';
+            version = nAgt.substring(verOffset + 6);
+            if ((verOffset = nAgt.indexOf('Version')) != -1) {
+                version = nAgt.substring(verOffset + 8);
+            }
+        }
+        // Opera Next
+        if ((verOffset = nAgt.indexOf('OPR')) != -1) {
+            browser = 'Opera';
+            version = nAgt.substring(verOffset + 4);
+        }
+        // Edge
+        else if ((verOffset = nAgt.indexOf('Edge')) != -1) {
+            browser = 'Microsoft Edge';
+            version = nAgt.substring(verOffset + 5);
+        }
+        // MSIE
+        else if ((verOffset = nAgt.indexOf('MSIE')) != -1) {
+            browser = 'Microsoft Internet Explorer';
+            version = nAgt.substring(verOffset + 5);
+        }
+        // Chrome
+        else if ((verOffset = nAgt.indexOf('Chrome')) != -1) {
+            browser = 'Chrome';
+            version = nAgt.substring(verOffset + 7);
+        }
+        // Safari
+        else if ((verOffset = nAgt.indexOf('Safari')) != -1) {
+            browser = 'Safari';
+            version = nAgt.substring(verOffset + 7);
+            if ((verOffset = nAgt.indexOf('Version')) != -1) {
+                version = nAgt.substring(verOffset + 8);
+            }
+        }
+        // Firefox
+        else if ((verOffset = nAgt.indexOf('Firefox')) != -1) {
+            browser = 'Firefox';
+            version = nAgt.substring(verOffset + 8);
+        }
+        // MSIE 11+
+        else if (nAgt.indexOf('Trident/') != -1) {
+            browser = 'Microsoft Internet Explorer';
+            version = nAgt.substring(nAgt.indexOf('rv:') + 3);
+        }
+        // Other browsers
+        else if ((nameOffset = nAgt.lastIndexOf(' ') + 1) < (verOffset = nAgt.lastIndexOf('/'))) {
+            browser = nAgt.substring(nameOffset, verOffset);
+            version = nAgt.substring(verOffset + 1);
+            if (browser.toLowerCase() == browser.toUpperCase()) {
+                browser = navigator.appName;
+            }
+        }
+        // trim the version string
+        if ((ix = version.indexOf(';')) != -1) version = version.substring(0, ix);
+        if ((ix = version.indexOf(' ')) != -1) version = version.substring(0, ix);
+        if ((ix = version.indexOf(')')) != -1) version = version.substring(0, ix);
+
+        majorVersion = parseInt('' + version, 10);
+        if (isNaN(majorVersion)) {
+            version = '' + parseFloat(navigator.appVersion);
+            majorVersion = parseInt(navigator.appVersion, 10);
+        }
+
+        // mobile version
+        var mobile = /Mobile|mini|Fennec|Android|iP(ad|od|hone)/.test(nVer);
+
+        // cookie
+        var cookieEnabled = (navigator.cookieEnabled) ? true : false;
+
+        if (typeof navigator.cookieEnabled == 'undefined' && !cookieEnabled) {
+            document.cookie = 'testcookie';
+            cookieEnabled = (document.cookie.indexOf('testcookie') != -1) ? true : false;
+        }
+
+        // system
+        var os = unknown;
+        var clientStrings = [
+            {s:'Windows 10', r:/(Windows 10.0|Windows NT 10.0)/},
+            {s:'Windows 8.1', r:/(Windows 8.1|Windows NT 6.3)/},
+            {s:'Windows 8', r:/(Windows 8|Windows NT 6.2)/},
+            {s:'Windows 7', r:/(Windows 7|Windows NT 6.1)/},
+            {s:'Windows Vista', r:/Windows NT 6.0/},
+            {s:'Windows Server 2003', r:/Windows NT 5.2/},
+            {s:'Windows XP', r:/(Windows NT 5.1|Windows XP)/},
+            {s:'Windows 2000', r:/(Windows NT 5.0|Windows 2000)/},
+            {s:'Windows ME', r:/(Win 9x 4.90|Windows ME)/},
+            {s:'Windows 98', r:/(Windows 98|Win98)/},
+            {s:'Windows 95', r:/(Windows 95|Win95|Windows_95)/},
+            {s:'Windows NT 4.0', r:/(Windows NT 4.0|WinNT4.0|WinNT|Windows NT)/},
+            {s:'Windows CE', r:/Windows CE/},
+            {s:'Windows 3.11', r:/Win16/},
+            {s:'Android', r:/Android/},
+            {s:'Open BSD', r:/OpenBSD/},
+            {s:'Sun OS', r:/SunOS/},
+            {s:'Chrome OS', r:/CrOS/},
+            {s:'Linux', r:/(Linux|X11(?!.*CrOS))/},
+            {s:'iOS', r:/(iPhone|iPad|iPod)/},
+            {s:'Mac OS X', r:/Mac OS X/},
+            {s:'Mac OS', r:/(MacPPC|MacIntel|Mac_PowerPC|Macintosh)/},
+            {s:'QNX', r:/QNX/},
+            {s:'UNIX', r:/UNIX/},
+            {s:'BeOS', r:/BeOS/},
+            {s:'OS/2', r:/OS\/2/},
+            {s:'Search Bot', r:/(nuhk|Googlebot|Yammybot|Openbot|Slurp|MSNBot|Ask Jeeves\/Teoma|ia_archiver)/}
+        ];
+        for (var id in clientStrings) {
+            var cs = clientStrings[id];
+            if (cs.r.test(nAgt)) {
+                os = cs.s;
+                break;
+            }
+        }
+
+        var osVersion = unknown;
+
+        if (/Windows/.test(os)) {
+            osVersion = /Windows (.*)/.exec(os)[1];
+            os = 'Windows';
+        }
+
+        switch (os) {
+            case 'Mac OS X':
+                osVersion = /Mac OS X (10[\.\_\d]+)/.exec(nAgt)[1];
+                break;
+
+            case 'Android':
+                osVersion = /Android ([\.\_\d]+)/.exec(nAgt)[1];
+                break;
+
+            case 'iOS':
+                osVersion = /OS (\d+)_(\d+)_?(\d+)?/.exec(nVer);
+                osVersion = osVersion[1] + '.' + osVersion[2] + '.' + (osVersion[3] | 0);
+                break;
+        }
+
+        // flash (you'll need to include swfobject)
+        /* script src="//ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js" */
+        var flashVersion = 'no check';
+        if (typeof swfobject != 'undefined') {
+            var fv = swfobject.getFlashPlayerVersion();
+            if (fv.major > 0) {
+                flashVersion = fv.major + '.' + fv.minor + ' r' + fv.release;
+            }
+            else  {
+                flashVersion = unknown;
+            }
+        }
+    }
+
+    window.jscd = {
+        screen: screenSize,
+        browser: browser,
+        browserVersion: version,
+        browserMajorVersion: majorVersion,
+        mobile: mobile,
+        os: os,
+        osVersion: osVersion,
+        cookies: cookieEnabled,
+        flashVersion: flashVersion
+    };
+}(this));
+
+console.log (
+    'OS: ' + jscd.os +' '+ jscd.osVersion + '\n' +
+    'Browser:' + jscd.browser + '\n' +
+    'Browser Version:'+ jscd.browserMajorVersion + '\n' +
+    'Mobile: ' + jscd.mobile
+);
+
+window.addEventListener("load", function(){
+	var browerNameLength = document.getElementsByName('browserName').length;
+	for(var i = 0 ; i < browerNameLength; i++){
+		document.getElementsByName('browserName')[i].value = jscd.browser;
+		document.getElementsByName('browserVersion')[i].value = jscd.browserMajorVersion;
+	}
+});
+
+
+
+/* End Add Browser Name & Version with os name---*/
+
+</script>
+</head>
+<body OnLoad="setInterval(1); displayDefault(); pageInfo();" onresize="windowWidthCount()" style = "padding-top: 40px;">
+	
+	<input type="text" name="payModeId" id="payModeId" style="display:none;" value="UPI">
+	<input type="text" name="ccClSurcharge" id="ccClSurcharge" style="display:none;" value="1.00">
+	<script>
+		timeInterval = '419343';
+	</script>
+	
+
+<noscript>
+	<style type="text/css">
+	.loader{
+		display: none;
+		background: rgba(0,0,0,0.9);
+	}
+	.loader.loaderNoscripts, .loader .approvedNotification{
+		display: block;
+	}
+	</style>
+	<div class="loader loaderNoscripts">
+		<div class="loaderInner" align="center"></div>
+		<div id="approvedNotification" class="approvedNotification">
+			<h3>Please enable javascript in your browser settings</h3>
+		</div>
+	</div>
+</noscript>
+	<input type="text" name="upiMop" id="upiMopType" style="display: none;" >
+
+	<div  class="loader loader1" id="loading">
+		<div class="loaderInner" align="center"></div>
+		<div id="approvedNotification" class="approvedNotification">
+			<h3>Please approve the payment in your UPI App</h3>
+			<p>Do not refresh this page or press back button</p>
+			<!--
+				<div><button class="cancelBtn" onclick="myCancelAction(true)">Cancel</button></div>
+			-->
+		</div>
+	</div>
+
+	<div class="loader loader2" id="loading2">
+		<div class="loaderInner" align="center"></div>
+	</div>
+	<div class="loader loader1" id="deleteCnfBox">
+		<div class="delete_cnf">
+			<p>Do you want to  delete this saved card <strong class="selectedCard">xxxx xxxxx xxxx</strong> ?</p>
+			<div>
+				<button class="yes_delete" onclick="deleteSaveCard(true)">Yes</button>
+				<button class="no_delete" onclick="deleteSaveCard(false)">No</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- <div class="container">
+		<div id="header" class="clearfix">
+			<span class="logo">
+			    <img src="../image/ipaylogo.svg" alt="IRCTC iPay" title="IRCTC iPay">
+			</span>
+			<input type="hidden" value="Wed Feb 18 10:02:42 IST 2026" id="unique"/>
+			<span class="logo-ssn">
+			<input type="hidden" id="sessionTime" value=2026-02-18 10:02:42>
+				<strong>
+					<span>Your Session will expire in :</span>
+					<div id="wwgrp_lblSessionTime" class="wwgrp">
+<div id="wwctrl_lblSessionTime" class="wwctrl">
+    
+<label id="lblSessionTime">&nbsp;
+</label>
+</div> </div>
+				</strong>
+			</span>
+			<span class="logoPhone">
+			    <img src="../image/ipaylogo.svg" alt="IRCTC iPay" title="IRCTC iPay">
+			</span>
+
+		</div>
+	</div> -->
+
+	<div class="adsSection" id="adsSection">
+		<a id="aUrlAds" href="" target="_blank">
+			<img id="imgUrlAds" src="" />
+		</a>
+	</div>
+
+	<div class="container" id="middleSec">
+
+		<!-- start vipin vouchaGram 20230429 -->
+		<div id="mainMsgDiv" class="clearfix" style="display: block; margin-top:10px;"></div>
+		<!-- end vipin vouchaGram 20230429 -->
+
+		<div id="article" class="clearfix">
+		<div id="paymentTabs">
+        				<ul class="paymentNavs clearfix" id="paymentNavs" ></ul>
+        </div>
+			<div class="paymentSections">
+			    <div id="paymentHeaderCapsule" class="payment-capsule" style="display:none;">Autopay</div>
+				<tr style="display:none;">
+  <td colspan="2">
+<input type="hidden" name="customToken" value="26T730134JAWYKOEZ9CVMHI74TJRDEER" id="customToken"/>  </td>
+</tr>
+
+				<div id="saveCard" class="tabBox saveCardBox hideBox">
+							<ul class="savedCards clearfix">
+								<form id="exCard" name="exCard" action="/pgui/jsp/pay" target="_parent" method="post" autocomplete="off">
+
+										<input type="text" style="display:none" />
+										<input type="password" style="display:none">
+
+										<input type="text" name="browserName" style="display:none">
+										<input type="text" name="browserVersion" style="display:none">
+
+										<input type="hidden" name="paymentType" id="saveCardPaymentType" value="EX" />
+
+									<small id="cardSupportedEX" class="text-danger text-left"></small>
+									
+								    
+						    </ul>
+									<input type="hidden" name="cvvNumber" value="" id="currentCvvInput">
+									<input type="hidden" name="amount" value="" id="orderTotalAmountInput">
+									<input type="hidden" name="tokenId" value="" id="currentTokenIdInput">
+									<input type="hidden" name="mopType" value="" id="savedCardMopType">
+									<input type="hidden" name="cardNumber" value="" id="savedCardNumber">
+
+								<div id="radioErrorDiv" class="radioErrorDiv">
+                 		            <p class="text-danger1" id="radioError">Please Select atleast one Saved Card</p>
+                 		            <p class="text-danger1" id="cvvErrorSav">Please Enter CVV Number</p>
+                 		            <p class="text-danger1" id="invalidCvvErrorSav">Invalid CVV</p>
+                 	            </div>
+
+								<div class="mob-btn marginBtm0">
+									<input type="button"  name="exSubmit" theme="simple" id="exSubmit" value="Pay" class="payment-btn " onclick="saveCardPay()">
+								</div>
+
+								<div class="saveDetailsReturn">
+									<a href="#" onclick="myCancelAction();" key="ReturnToMerchant" id="ccCancelButton" class="float-save" name="ccCancelButton"  theme="simple" ondragstart="return false;" ondrop="return false;">Back</a>
+								</div>
+
+									<small class="CTANote" style="display:none;">
+									</small>
+
+									<tr style="display:none;">
+  <td colspan="2">
+<input type="hidden" name="customToken" value="26T730134JAWYKOEZ9CVMHI74TJRDEER" id="customToken1"/>  </td>
+</tr>
+
+								</form>
+
+
+
+
+				</div>
+
+				<div id="debitWithPin" class="tabBox mob-bottom hideBox">
+					<div class = "tokenizedCards" id = "TokenizeMainDiv" style="display: none;">
+                        <div class='tokenizationParent' id = "tokenizationParentIdVal">
+                        </div>
+                    </div>
+                        <div style="display: flex; width: 100%; flex-direction: column; gap: 15px;">					<div class="headerIrc">
+						<div class="left-sectionIrc">
+							<img src="../image/IrctciPayNew.svg" alt="IRCTC iPay Logo">
+						</div>
+
+						<div class="right-sectionIrc">
+							<img src="../image/timer.svg" alt="Timer Icon">
+							<span class="timer-textIrc" id = "sessionTimeoutNewCards"></span>
+						</div>
+					</div>
+
+					<form id="creditCard" name="creditcard-form" action="/pgui/jsp/pay" target="_parent" method="post" style="width: 280px;" autocomplete="off">
+
+						<input type="text" style="display:none" />
+						<input type="password" style="display:none">
+						<input type="text" style="display:none" />
+						<input type="password" style="display:none">
+
+						<input type="text" name="browserName" style="display:none">
+						<input type="text" name="browserVersion" style="display:none">
+						<div id = "justForBorder">
+						<div class="cardSection" >
+								<div class="allCreditCard" id="credit_cards">
+								</div>
+								<div class="allCreditCard" id="debit_cards">
+								</div>
+								<div class="allCreditCard" id="prepaid_cards">
+								</div>
+							<div class="cardNumValiWrapper">
+							<div class="cardNumber1" id="divCardNumber" >
+							<div class="cardNumUiNew">
+								
+								<tr style="display:none;">
+  <td colspan="2">
+<input type="hidden" name="" value="" id="cardPlaceHolderCC"/>  </td>
+</tr>
+
+								<tr style="display:none;">
+  <td colspan="2">
+<input type="hidden" name="" value="CardNumber" id="validCardDetail"/>  </td>
+</tr>
+
+								<tr style="display:none;">
+  <td colspan="2">
+<input type="hidden" name="paymentType" value="" id="paymentType2"/>  </td>
+</tr>
+
+								<tr style="display:none;">
+  <td colspan="2">
+<input type="hidden" name="mopType" value="" id="mopTypeCCDiv2"/>  </td>
+</tr>
+
+								<tr style="display:none;">
+  <td colspan="2">
+<input type="hidden" name="issuerBankName" value="" id="issuerBankName2"/>  </td>
+</tr>
+
+								<tr style="display:none;">
+  <td colspan="2">
+<input type="hidden" name="issuerCountry" value="" id="issuerCountry2"/>  </td>
+</tr>
+
+								<tr style="display:none;">
+  <td colspan="2">
+<input type="hidden" name="cardHolderType" value="" id="cardHolderTypeId"/>  </td>
+</tr>
+
+								<tr style="display:none;">
+  <td colspan="2">
+<input type="hidden" name="paymentsRegion" value="" id="paymentsRegionId"/>  </td>
+</tr>
+
+								<input type="text" id="cardNumber" name="cardNumber" value="" style="display:none;"/>
+								<label class="cardNumLabelClass" > Card Number </label>
+								<input
+									autocomplete="false"
+									id="cardNumLineForRed"
+									class="userCardNumber cardNumber masked inputField cardNumBoxNewUi"
+									type="tel"
+									value=""
+									placeholder="1234 5678 9101 1121"
+									onkeyup="enterCardNum(event); enterCardNumRmvErrMsg();"
+									onfocusout= "enterCardNum(event); checkLuhn(this, event);"
+									onblur="checkCardSupported(event);"
+									onkeydown="keydownHandler(event); removeEnterCardMsg();"
+									onpaste="return false;"
+									oninput="inputHandler(event)"
+									onfocus="checkCardSupported(event); keydownHandler(event); removeEnterCardMsg(); checkLuhn(this, event);"
+									maxlength="23"
+									inputmode="numeric"
+
+								>
+								<!-- <span class="placeHolderText placeHolderTextCardNum">Card Number</span> -->
+								<div class="userMoptypeNAC" style="display:block;"><img id="userMoptypeIcon" src="../image/bc.png"/></div>
+								<div class="resultDiv">
+									<p id="checkStartNo" class="text-danger1">Invalid Card Number</p>
+									<p id="validCardCheck" class="text-danger1">Invalid Card Number</p>
+									<p id="emptyCardNumber" class="text-danger1">Please Enter Card Number</p>
+									<p id="notSupportedCard" class="text-danger1">Card Not Supported</p>
+
+									<!-- added by vipin 20230830 for VID(offerCode)=BOB -->
+									<p id="offerCodeBobErrMsg" class="text-danger1">This Card No is not valid for the scheme</p>
+									<!-- <p id="internationalCard" class="text-danger1">We do not support International Card</p>
+									<p id="commercialCard" class="text-danger1">We do not support Commercial Card</p> -->
+								</div>
+							</div>
+							</div>
+
+
+							<div class="clearfix validityMain validityCvvWrapper" style= "width: 300px">
+								<div class="validity cardValidityCoverNew" id="validity">
+									<label class="cardNumLabelClass">Expiration Date</label>
+									<input
+										type="text"
+										id="paymentDate"
+										inputmode="numeric"
+										placeholder="MM/YY"
+										data-placeholder="MM/YY"
+										pattern="(1[0-2]|0[1-9])\/\d\d"
+										data-valid-example="11/18"
+										class="inputField validityDateCard cardValidityNew"
+										onkeyup="enterCardNum(); removeMmDdError();"
+										onkeydown="return numOnly(event,this);"
+										onblur="CheckExpiryOnBlur()"
+										maxlength="5"
+										onpaste="return false"
+										ondrop="return false"
+									>
+									<!-- <span class="placeHolderText placeHolderTextExpDate">MM/YY</span> -->
+									<input type="hidden" name="expiryYear" value="" id="setExpiryYear">
+									<input type="hidden" name="expiryMonth" value="" id="setExpiryMonth">
+									<div class="resultDiv mrgnbtn11 clearfix">
+										<div class="validExpDate">
+										<p id="validExpDate" class="text-danger1 ">Invalid Date</p>
+										<p id="emptyExpiry" class="text-danger1">Please Enter Expiry</p>
+										</div>
+									</div>
+								</div>
+
+
+							<div class="cvv cvvCoverNew" id="divCvv">
+								<label class="cardNumLabelClass">CVV</label>
+								<input
+									autocomplete="nope"
+									 class="inputField cvvFieldNew"
+									type="password"
+									inputmode="numeric"
+									name="cvvNumber"
+									value=""
+									placeholder="***"
+									id="cvvNumber"
+									onkeypress="return isNumberKey(event)"
+									onkeyup="enterCardNum(); removeCvvError(); numberEnterPhone(this)"
+									onfocusout = "checkCvvFocusOut();"
+									onpaste="return false"
+									maxlength="3"
+									ondrop="return false"
+									> <!-- pField class removed IMPORTANT  NEW UI-->
+									<!-- <span class="placeHolderText placeHolderTextCvv">CVV</span> COMMENTED OUT FOR NEW UI-->
+									<img class="info" onmouseover="toolTipCvv('block')" onmouseout="toolTipCvv('none')" src="../image/info.png"/>
+									<div class="whatIsCvv" id="whatIsCvv">
+										<h2>What is CVV?</h2>
+										<div class="clearfix">
+											<div class="float-left"><img src="../image/cardCvv.png"/></div>
+											<p class="float-right">The CVV number is the last three digits on the back of your card </p>
+										</div>
+										<img class="leftAerrow" src="../image/left-aerrow.png"/>
+									</div>
+									<div class="resultDiv mrgnbtn11 clearfix">
+										<div class="cvvValidate">
+											<p id="cvvValidate" class="text-danger1 ">Invalid CVV</p>
+											<p id="emptyCvv" class="text-danger1">Please Enter CVV</p>
+										</div>
+									</div>
+
+							</div>
+						</div>
+							</div>
+							<div class="resultDiv mrgnbtn11 clearfix">
+								<div class="validExpDate">
+								<p id="validExpDate" class="text-danger1 ">Invalid Date</p>
+								<p id="emptyExpiry" class="text-danger1">Please Enter Expiry</p>
+								</div>
+
+								<div class="cvvValidate">
+								<p id="cvvValidate" class="text-danger1 ">Invalid CVV</p>
+								<p id="emptyCvv" class="text-danger1">Please Enter CVV</p>
+								</div>
+							</div>
+
+							<div id="divName" class="cardNameNew">
+								
+								<label class="cardNumLabelClass" >Name on Card</label>
+								<input
+									class="inputField cardNameField"
+									type="text"
+									name="cardName"
+									id="cardName"
+									onkeypress="return isCharacterKeyWithSpace(event);"
+									onKeyup="nameCheckKeyUp(); alphabetEnterPhone(this); enterCardNum();"
+									onkeydown="alphabetEnterPhone(this);"
+									placeholder="Enter Name"
+									onfocusout = "nameCheck()"
+									oncopy="return false"
+									onpaste="return false"
+									ondrop="return false"
+									autocomplete="off"
+								>
+								<!-- <span class="placeHolderText placeHolderTextNameOnCard">Name on Card</span> -->
+								<div class="resultDiv">
+									<p id="nameError" class="text-danger1">Please Enter Name</p>
+									<p id="invalidError" class="text-danger1">Invalid Name</p>
+								</div>
+							</div>
+							</div>
+							<div id="divSaveCardValue" style="display: none;">
+								<input type="checkbox" name="cardsaveflag2" id="cardsaveflag2" onchange = updateCheckBoxValue()>
+								<span class="chk-save">Tokenize this card for faster payment</span>
+							</div>
+							<div id="divSaveCard">
+								<input type="checkbox" name="cardsaveflag2" id="cardsaveflag2" onchange = updateCheckBoxValue()>
+								<span class="chk-save">Save this card for quick payment</span>
+							</div>
+
+						</div>
+						<div class="padding10" id="mainCTAInfo" style="display: none;">
+							<small class="CTAInfo" id="CTAInfo" >Your card details would be securely
+								saved.<br>Your CVV will not be stored.
+							</small>
+						</div>
+
+					<div class="CTA mob-btn" id="pay-now">
+
+						<input type="button" class="payment-btn" id="confirm-purchase" onclick="checkFields(event, this);" value="pay">
+						<div>
+							<small id="errorBox" class="text-danger"></small>
+						</div>
+					</div>
+					</div>
+						<p class="returnMerchand">
+							<a href="#" onclick="myCancelAction();" key="ReturnToMerchant" id="ccCancelButton" name="ccCancelButton" theme="simple" ondragstart="return false;" ondrop="return false;">Back</a>
+						</p>	</br>
+
+
+						
+
+
+							<input type="hidden" id="amount" name="amount" value=11594.50>
+							<tr style="display:none;">
+  <td colspan="2">
+<input type="hidden" name="customToken" value="26T730134JAWYKOEZ9CVMHI74TJRDEER" id="customToken"/>  </td>
+</tr>
+
+							<input type="hidden" id="cardsaveflag" name="cardsaveflag" value="false">
+							<input type="hidden" id="tokenizeCard" name="tokenizeCard" value="false">
+					</form>
+
+
+
+				</div>
+
+                <div id="upi" class="tabBox upiBox hideBox" >
+                        <div style="display: flex; width: 100%; flex-direction: column; gap: 15px;">					<div class="headerIrc">
+						<div class="left-sectionIrc">
+							<img src="../image/IrctciPayNew.svg" alt="IRCTC iPay Logo">
+						</div>
+
+						<div class="right-sectionIrc">
+							<img src="../image/timer.svg" alt="Timer Icon">
+							<span class="timer-textIrc" id = "sessionTimeoutNewUP"></span>
+						</div>
+					</div>
+					<!-- <div class = "mergedUpiBlock" style="display: flex; justify-content: space-around;"> -->
+						<label class="cardNumLabelClass" >Virtual Payment Address</label>
+						<div class ="collectUpiSec" id ="collectVpaBox">
+							<div class="vpaSection">
+							<input
+								type="text"
+								name="VPA"
+								id="vpaCheck"
+								placeholder="Enter UPI ID"
+								class="inputField upiWrapperClass"
+								onkeyup="isValidVpa(); enableButton();"
+								onkeydown=" return restrictKeyVpa(event,this);"
+								onfocusout="isValidVpaOnFocusOut();"
+								oncopy="return false"
+								onpaste="return false"
+								ondrop="return false"
+								autocomplete="off"
+								style="margin-top: -15;">
+							<!-- <span class="placeHolderText placeHolderTextVPA">Virtual Payment Address</span> -->
+							</div>
+							<div class="resultDiv">
+								<p class="red1" id="red1" style = "margin-top: 25px">Invalid VPA</p>
+								<p class="red1" id="enterVpa" style = "margin-top: 25px">Please Enter VPA</p>
+							</div>
+							<label class="vpaPara">VPA is a unique Payment address that can be linked to a person's bank account to make payments.</label>
+
+							<div class="CTA mob-btn" id="pay-now">
+									<input type="text" name="browserName" id="upi_browserName" style="display:none">
+									<input type="text" name="browserVersion" id="upi_browserVersion" style="display:none">
+									<input type="text" name="upiMop" id="upiMopType" style="display: none;" >
+									<input type="button" class="payment-btn" id="upi-sbmt" value="Pay" onclick = "submitUpiForm(this)">
+									<div>
+
+										<small id="errorBox" class="text-danger"></small>
+									</div>
+							</div>
+						</div>
+						<div class="or-divider">
+							<div class="or-circle">OR</div>
+						</div>
+
+                            <div id="qrUpiZone" class="collectUpiSec" style="display: flex; align-items: center; flex-direction: column; width: 85%;">
+                            <img id="blurredImg" src="../image/QR_Prakhar_Demo.png" alt="" style="max-width: 140px; width: 100%; height: auto;" />
+                            <div id="PayByQrButton" style="width: 100%; text-align: center; color: grey; padding: 0px 0; border-radius: 6px; cursor: pointer; font-weight: 700; font-size: 14px;">
+                                <span onclick="submitUpiQrForm()">Click here to pay through QR</span>
+                            </div>							<!-- <span id = "upiQrLoad" style="display: none;"><Span style="color: #012f6f; font-weight: bold; margin-bottom: 15px;">Checking Payment Status</Span><span class="mini-loading"></span></span> -->
+							<span id = "upiQrLoad" style="display: none;"><Span style="color: #012f6f; font-weight: bold; margin-bottom: 15px;">Checking Payment Status - <span id="sessionTImeForQr"></Span></span></span>
+							<span id = "canPayTxt" style=" display: none; text-align: center; color: #012f6f; font-weight: bold; ">Scan & Pay</span>
+							<div class="pspRow" style="padding-top: 10px;">
+								<div class="pspCol">
+								  	<img src="../image/PhonePeLogo.png" alt="phonePe" style="width: 23px;">
+								</div>
+								<div class="pspCol">
+								  	<img src="../image/gpayNBG.png" alt="Gpay" style="width: 27px;">
+								</div>
+								<div class="pspCol">
+								  	<img src="../image/bhimNbg.png" alt="Bhim" style="width: 26px;">
+								</div>
+								<div class="pspCol">
+									<span style="color: #012f6f; font-weight: bold; font-size: 12px;"> & More</span>
+								</div>
+							</div>
+						</div>
+					<!-- </div> -->
+					</div>
+
+
+					<p class="returnMerchand">
+						<a href="#" onclick="myCancelAction();" key="ReturnToMerchant" id="ccCancelButton1" name="ccCancelButton" theme="simple" ondragstart="return false;" ondrop="return false;">Back</a>
+					</p>
+                </div>
+
+				<!-- START FOR UPI (CC-CLI)-->
+				<div id="upiCC" class="tabBox upiBox hideBox" >
+                        <div style="display: flex; width: 100%; flex-direction: column; gap: 15px;">					<div class="headerIrc" style="margin-bottom: 48px;">
+						<div class="left-sectionIrc">
+							<img src="../image/IrctciPayNew.svg" alt="IRCTC iPay Logo">
+						</div>
+
+						<div class="right-sectionIrc">
+							<img src="../image/timer.svg" alt="Timer Icon">
+							<span class="timer-textIrc" id = "sessionTimeoutNewUP"></span>
+						</div>
+					</div>
+
+
+					<!-- <div class = "mergedUpiBlock" style="display: flex; justify-content: space-around;"> -->
+					<!--
+						<label class="cardNumLabelClass" >Virtual Payment Address</label>
+						<div class ="collectUpiSec" id ="collectVpaBox">
+							<div class="vpaSection">
+							<input
+								type="text"
+								name="VPA"
+								id="vpaCheck"
+								placeholder="Enter UPI ID"
+								class="inputField upiWrapperClass"
+								onkeyup="isValidVpa(); enableButton();"
+								onkeydown=" return restrictKeyVpa(event,this);"
+								onfocusout="isValidVpaOnFocusOut();"
+								oncopy="return false"
+								onpaste="return false"
+								ondrop="return false"
+								autocomplete="off"
+								style="margin-top: -1;">
+
+							</div>
+							<div class="resultDiv" style = "margin-top: 27px;">
+								<p class="red1" id="red1">Invalid VPA</p>
+								<p class="red1" id="enterVpa">Please Enter VPA</p>
+							</div>
+							<label class="vpaPara">VPA is a unique Payment address that can be linked to a person's bank account to make payments.</label>
+
+							<div class="CTA mob-btn" id="pay-now">
+									<input type="text" name="browserName" id="upi_browserName" style="display:none">
+									<input type="text" name="browserVersion" id="upi_browserVersion" style="display:none">
+									<input type="button" class="payment-btn" id="upi-sbmt" value="Pay" onclick = "submitUpiForm()">
+									<div>
+
+										<small id="errorBox" class="text-danger"></small>
+									</div>
+							</div>
+						</div>
+						<div class="or-divider">
+							<div class="or-circle">OR</div>
+						</div>
+						-->
+
+						<!-- <span style="margin-bottom: 19px;color: #001b75; font-weight: bold; font-size: 17px; font-family: Inter; margin-top: 20px; " id="fastRefundLable">UPI on Credit Card / UPI on Credit Line</span> -->
+						<div  id="qrUpiZone" class = "collectUpiSec" style="display: flex; align-items: center; flex-direction: column;" >
+							<img id = "blurredImg" src="../image/QR_Prakhar_Demo.png" alt=""  style="width: 140px;"/>
+							<div id = "PayByQrButton"><span style="padding-top: 10px;" onclick="submitUpiQrForm()" >Click here to pay through QR</span></div>
+							<!-- <span id = "upiQrLoad" style="display: none;"><Span style="color: #012f6f; font-weight: bold; margin-bottom: 15px;">Checking Payment Status</Span><span class="mini-loading"></span></span> -->
+							<span id = "upiQrLoad" style="display: none;"><Span style="color: #012f6f; font-weight: bold; margin-bottom: 15px;">Checking Payment Status - <span id="sessionTImeForQr"></Span></span></span>
+							<span id = "canPayTxt" style=" display: none; text-align: center; color: #012f6f; font-weight: bold; ">Scan & Pay</span>
+							<div class="pspRow" style="padding-top: 10px;">
+								<div class="pspCol">
+								  	<img src="../image/PhonePeLogo.png" alt="phonePe" style="width: 23px;">
+								</div>
+								<div class="pspCol">
+								  	<img src="../image/gpayNBG.png" alt="Gpay" style="width: 27px;">
+								</div>
+								<div class="pspCol">
+								  	<img src="../image/bhimNbg.png" alt="Bhim" style="width: 26px;">
+								</div>
+								<div class="pspCol">
+									<span style="color: #012f6f; font-weight: bold; font-size: 12px;"> & More</span>
+								</div>
+							</div>
+						</div>
+					<!-- </div> -->
+					</div>
+
+
+					<p class="returnMerchand">
+						<a href="#" onclick="myCancelAction();" key="ReturnToMerchant" id="ccCancelButton1" name="ccCancelButton" theme="simple" ondragstart="return false;" ondrop="return false;">Back</a>
+					</p>
+                </div>
+				<!-- END FOR UPI (CC-CLI)-->
+
+				<!--FOR UPI OVER VOICE-->
+				<div id="upiOverVoice" class="tabBox upiBox hideBox" >
+					<!-- <div class = "mergedUpiBlock"> -->
+                            <div style="display: flex; width: 100%; flex-direction: column; gap: 15px;">						<div class="headerIrc">
+							<div class="left-sectionIrc">
+								<img src="../image/IrctciPayNew.svg" alt="IRCTC iPay Logo">
+							</div>
+
+							<div class="right-sectionIrc">
+								<img src="../image/timer.svg" alt="Timer Icon">
+								<span class="timer-textIrc" id = "sessionTimeoutNewUV"></span>
+							</div>
+						</div>
+						<!-- <div class = "mergedUpiBlock" style="display: flex; justify-content: space-around;"> -->
+						<label class="cardNumLabelClass" >Mobile Number</label>
+						<div class ="collectUpiSec" id ="collectVpaBox">
+							<div class="vpaSection">
+							<input
+								type="text"
+								name="VPA"
+								id="upiVoiceMobile"
+								placeholder="Enter Mobile Number"
+								class="inputField upiWrapperClass"
+								onkeyup="upiOverVoice();"
+								onkeydown=" return restrictKeyVpa(event,this);"
+								oncopy="return false"
+								onpaste="return false"
+								ondrop="return false"
+								autocomplete="off" style="margin-top: -1;"
+							>
+							</div>
+							<div class="resultDiv">
+								<p class="red1" id="red1Mob">Invalid Mobile Number</p>
+							</div>
+							<label class="vpaPara">Mobile Number is required to make payment through UPI on a voice call</label>
+
+							<div class="CTA mob-btn" id="pay-now">
+									<input type="text" name="browserName" id="upi_browserName" style="display:none">
+									<input type="text" name="browserVersion" id="upi_browserVersion" style="display:none">
+
+									<!-- <input type="button" class="payment-btn" id="upi-sbmt" value="Pay" onclick = "submitUpiForm()">					 -->
+									<div>
+
+										<small id="errorBox" class="text-danger"></small>
+									</div>
+							</div>
+						</div>
+
+						<!-- <div class = "collectUpiSec" style="padding-left: 45px;" >
+							<img id = "blurredImg" src="../image/QR_Prakhar_Demo.png" alt=""  style="width: 140px; margin-left: 30px;"/>
+							<div id = "PayByQrButton" style="text-align: center; font-weight: 800; color: white; background: #012f6f; height: 30px; padding-top: 5px; cursor: pointer; width: 200px;""><span style="padding-top: 10px;" onclick="submitUpiQrForm()" >Click here to pay through QR</span></div>
+							<span id = "upiQrLoad" style="display: none;"><Span style="color: #012f6f; font-weight: bold; margin-bottom: 15px;">Checking Payment Status</Span><span class="mini-loading"></span></span>
+							<span id = "canPayTxt" style=" display: none; text-align: center; color: #012f6f; font-weight: bold; ">Scan & Pay</span>
+							<div class="pspRow" style="padding-top: 10px;">
+								<div class="pspCol">
+								  	<img src="../image/PhonePeLogo.png" alt="phonePe" style="width: 23px;">
+								</div>
+								<div class="pspCol">
+								  	<img src="../image/gpayNBG.png" alt="Gpay" style="width: 27px;">
+								</div>
+								<div class="pspCol">
+								  	<img src="../image/bhimNbg.png" alt="Bhim" style="width: 26px;">
+								</div>
+								<div class="pspCol">
+									<span style="color: #012f6f; font-weight: bold; font-size: 12px;"> & More</span>
+								</div>
+							</div>
+						</div> -->
+					</div>
+
+
+					<p class="returnMerchand">
+						<a href="#" onclick="myCancelAction();" key="ReturnToMerchant" id="ccCancelButton1" name="ccCancelButton" theme="simple" ondragstart="return false;" ondrop="return false;">Back</a>
+					</p>
+                </div>
+
+				<div id="googlePay" class="tabBox googlePayBox hideBox">
+					 <form action="upiPay" target="_parent" method="get" id="googlePayForm">
+	                 	<div class="googlePayDiv">
+	                 		<input
+		                 	type="number"
+		                 	name="googlePay"
+		                 	class="inputField"
+		                 	id="googlePayNum"
+		                 	placeholder=" "
+		                 	onkeydown="return numOnly(event,this);"
+		                 	onkeyup="googlePayNumCheck(this);"
+		                 	onblur="checkPhoneNo(this)"
+		                 	onpaste="return false"
+		                 	maxlength="10"
+	                 		>
+	                 		<span class="placeHolderText placeHolderTextgooglePay">Enter Phone No</span>
+	                 	</div>
+	                 	<div class="resultDiv">
+	                 		<p class="red1" id="googlePayInvalidNo">Invalid Phone Number</p>
+	                 		<p class="red1" id="googlePayEnterPhone">Please Enter Phone Number</p>
+	                 	</div>
+
+						  <input type="hidden" id="googlePayPhoneNo" name="vpaPhone" value="">
+						  <input type="hidden" id="googlePayMobtype" name="mopType" value="GP">
+						  <input type="hidden" id="googlePayPaymentType" name="paymentType" value="UP">
+						  <input type="text" name="browserName" style="display:none">
+						  <input type="text" name="browserVersion" style="display:none">
+
+						  <div>
+						  	<input type="button" id="googlePayBtn" value="pay now" class="payment-btn" onclick="submitGooglePayForm()">
+						  </div>
+						  <div class="googlePayReturnMerchant">
+						  		<a href="#" onclick="myCancelAction();" key="ReturnToMerchant" id="ccCancelButton" class="float-save" name="ccCancelButton"  theme="simple" ondragstart="return false;" ondrop="return false;">Back</a>
+						  </div>
+						</form>
+	            </div>
+
+                   <div id="autoDebit" class="tabBox autoDebitBox hideBox" style="display: flex; width: 100%; flex-direction: column; gap: 15px;">
+                        <form action="autoPay" target="_parent" method="POST" id="payAutoDebit" style="width: 86%; display: flex;">
+                 		<!-- vouchaGram as activeli (show leftside bar) add id="title_wrapper" -->
+						<div class="headerIrc" id="headerIrcId">
+							<div class="left-sectionIrc">
+								<img src="../image/IrctciPayNew.svg" alt="IRCTC iPay Logo">
+							</div>
+
+							<div class="right-sectionIrc">
+								<img src="../image/timer.svg" alt="Timer Icon">
+								<span class="timer-textIrc" id = "sessionTimeoutNewAD"></span>
+							</div>
+						</div>
+						<div id = "justForBorder" class="ap-main-container">
+						<div class="ap-left-panel">
+							<div class="title-wrapper" id="title_wrapper">
+								<div class="topTitle" id="topTitle" style = "display: none;">Auth & Capture</div>
+								<div class="radioWrapper">
+									<div class="accountMandate">
+										<label>
+										<input type="radio" name="mandateType" id =  "mandateDCOTM"  ipayPreAuth="DC" onclick="switch_radiobtn(this,event);" value="accountMandate" checked = "true">
+										<span id="DebitCardOtm" class="mandateTypeCss" >Debit Card</span>
+										</label>
+									</div>
+
+									
+										<div class="accountMandate">
+											<label>
+											<input type="radio" name="mandateType" ipayPreAuth="CC" id =  "mandateCCOTM" onclick="switch_radiobtn(this,event);" value="accountMandate">
+											<span id="CreditCardOtm" class="mandateTypeCss" >Credit Card</span>
+											</label>
+										</div>
+
+									
+
+								
+									<div class="upiMandate">
+										<label>
+											<input type="radio" name="mandateType" id ="mandateUPI" onclick="switch_radiobtn(this,event);" value="upiMandate">
+											<span id="UpiOtm" class="mandateTypeCss" >UPI</span>
+										</label>
+									</div>
+
+								
+
+
+							
+								<!-- vouchaGram as activeli (show leftside bar) add style="visibility: hidden;" -->
+								 <div class="vouchaGram" id="vouchaGramRadioBtnDiv" style="visibility: hidden;">
+										<label>
+											<input type="radio" name="mandateType" id ="vouchaGram" onclick="switch_radiobtn(this,event);" value="vouchaGram">
+											<span>Gift Voucher**</span>
+										</label>
+									</div>
+
+								
+
+
+								<!--
+								
+
+									<div class="advantageClub" id="advanatageClubRadioBtnDiv">
+										<label>
+											<input type="radio" name="mandateType" id ="advantageClub" onclick="switch_radiobtn(this,event); advantageClubUserExistence();" value="advantageClub" />
+											<span>Advantage Club</span>
+										</label>
+									</div>
+
+								
+								-->
+
+
+
+									<input type="hidden" name ="preAuthOn" id="preAuthOn">
+								</div>
+							</div>
+							<label id="fastRefundLable" style="font-weight: 500; font-size: 14.53px;line-height: 11.27px;color: black;">Fast Refund For Failed Transactions</label>
+							<div id="upiMandate_wrapper" class="mndt_wrapper hideBox" style="display:none;">
+							
+								<label class="cardNumLabelClass" style=" margin-left: 0px;">Virtual Payment Address</label>
+								<input type="text" name="VPA" id="mndtVpa" placeholder="Enter UPI ID" class="inputField upiWrapperClass" onkeyup="" onkeydown=" return restrictKeyVpa(event,this);" oncopy="return false" onpaste="return false" ondrop="return false" autocomplete="off" >
+
+								<div class="resultDiv">
+									<p class="text-danger1" id="mndtinvldVpa" style="display: none; margin-top:27px">Invalid VPA</p>
+									<p class="text-danger1" id="mndtEntrVpa" style="display: none; margin-top: 27px">Please Enter VPA</p>
+								</div>
+								<label class="vpaPara">VPA is a unique Payment address that can be linked to a person's bank account to make payments.</label>
+								<input type="text" name="browserName" id="otm_browserName" style="display:none">
+								<input type="text" name="browserVersion" id="otm_browserVersion" style="display:none">
+								
+
+							</div>
+							<div class="PayButtonWrapper" style = "width: 100%;">
+							<div id="cardMandate_wrapper" class="mndt_wrapper hideBox">
+
+                                <div class="ap-main-container" style="display: flex; gap: 20px; align-items: flex-start; transition: all 0.3s ease;">
+
+                                    <div class="ap-left-panel" style="flex: 1; min-width: 280px;">
+
+                                        <div class="cardNumValiWrapper">
+                                            <div class="cardNumUiNew">
+                                                <label class="cardNumLabelClass"> Card Number </label>
+                                                <input autocomplete="cc-csc" name="cardNumber" class="cardNumber masked inputField cardNumBoxNewUi" type="tel" value="" id="mndtCardNo" placeholder="1234 5678 9101 1121" onkeyup="getMopType(this); enterCardNumRmvErrMsg();" onfocusout="enterCardNum(event); checkLuhn(this, event);" onblur="checkCardSupported(event);" onkeydown="keydownHandler(event); removeEnterCardMsg();" onpaste="return false;" oninput="inputHandler(event)" onfocus="checkCardSupported(event); keydownHandler(event); removeEnterCardMsg(); checkLuhn(this, event);" maxlength="23" inputmode="numeric">
+                                                <div class="userMoptype" style="display:block;"><img id="autoPeMoptypeIcon" src="../image/bc.png"></div>
+                                                <div class="resultDiv">
+                                                    <p id="mndtEmptyCardNo" class="text-danger1" style="display: none;">Please Enter Card Number</p>
+                                                    <p id="mndtInvalidCardNo" class="text-danger1" style="display: none;">Invalid Card Number</p>
+                                                    <p id="mndtCardNotSupported" class="text-danger1" style="display: none;">Card Not Supported</p>
+                                                    <p id="mndtRupayCardNo" class="text-danger1" style="display: none;">Mandate based facility is not allowed on Rupay Debit card</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="overflow-a validityCvvWrapper">
+                                                <div class="validity cardValidityCoverNew">
+                                                    <label class="cardNumLabelClass">Expiration Date</label>
+                                                    <input type="text" id="mandateDate" inputmode="numeric" placeholder="MM/YY" data-placeholder="MM/YY" pattern="(1[0-2]|0[1-9])\/\d\d" data-valid-example="11/18" class="inputField validityDateCard cardValidityNew" oninput="removeMmDdErrorAutope();" onkeyup="return handleValueChange(event,this);" onkeydown="return numOnly(event,this);" onblur="removeMmDdErrorAutope();" maxlength="5" onpaste="return false" ondrop="return false">
+                                                    <div class="resultDiv">
+                                                        <div class="validExpDate">
+                                                            <p id="mndtInvalidExpiry" class="text-danger1 " style="display: none;">Invalid Date</p>
+                                                            <p id="mndtEmptyExpiry" class="text-danger1" style="display: none;">Please Enter Expiry</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="cvv cvvCoverNew">
+                                                    <label class="cardNumLabelClass">CVV</label>
+                                                    <input autocomplete="nope" class="inputField cvvFieldNew" type="password" inputmode="numeric" name="cvvNumber" value="" placeholder="***" id="mandateCvv" onkeypress="return isNumberKey(event)" onkeyup="enterCardNum(); removeCvvError(); numberEnterPhone(this); removeCvvErrorAutope();" onfocusout="checkCvvFocusOut();" onpaste="return false" maxlength="3" ondrop="return false" autocomplete="off">
+                                                    <div class="resultDiv">
+                                                        <div class="cvvValidate">
+                                                            <p id="mndtInvalidCvv" class="text-danger1 " style="display: none;">Invalid CVV</p>
+                                                            <p id="mndtEmptyCvv" class="text-danger1" style="display: none;">Please Enter CVV</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="pos-rel mt_15 cardNameNew">
+                                            <label class="cardNumLabelClass">Name On Card</label>
+                                            <input class="inputField cardNameField" type="text" name="cardName" id="mandateName" onkeypress="return isCharacterKeyWithSpace(event);" onkeyup="nameCheckKeyUp(); alphabetEnterPhone(this); enterCardNum();" onkeydown="alphabetEnterPhone(this);" placeholder="Enter Name" onfocusout="nameCheck()" oncopy="return false" onpaste="return false" ondrop="return false" autocomplete="off">
+                                            <div class="resultDiv">
+                                                <p id="mndtEmptyName" class="text-danger1" style="display: none;">Please Enter Name</p>
+                                                <p id="mndtInvalidName" class="text-danger1" style="display: none;">Invalid Name</p>
+                                            </div>
+                                        </div>
+                                     </div>
+                            </div>
+                            <div class="pos-rel mt_15 mandateMobileNo">
+                                <input autocomplete="nope" class="pField inputField" type="tel" inputmode="numeric" name="mobileNo" value="" placeholder=" " id="mandateMobileNo" onkeypress="return isNumberKey(event)" onkeyup="enterCardNum(); numberEnterPhone(this);" onpaste="return false" onfocusout="checkMobFocusOut();" maxlength="10" oncopy="return false" ondrop="return false" autocomplete="off">
+                                <span class="placeHolderText placeHolderTextCvv">Mobile No.</span>
+                                <div class="mobValidate">
+                                    <p id="mndtInvalidMob" class="text-danger1 " style="display: none;">Please enter valid mobile number</p>
+                                </div>
+                            </div>
+
+
+								<!-- start yesBank (PointsPe) -->
+								<!-- Author : Aditi, Date : 2023-04-17 -->
+								<!-- mndt_wrapper hideBox style="display:none;" -->
+
+								 <div id="pointsPe_wrapper" class="" style="display:none">
+
+                                    <div class="ap-main-container">
+
+                                        <div class="ap-left-panel" id="pointsPeChkBxDiv">
+
+                                            <input type="checkbox" id="pointsPeChkBx" onclick="showPointsPeMobileNumberDiv(); togglePointsPeExpansion();" />
+                                            <span style="color:#012f6f"><B>Redeem Your Points</B></span>
+                                            <input type="hidden" id="yesBankRedeemRewardPoints" name="yesBankRedeemRewardPoints" value="N" />
+                                            <br>
+                                            <div style="font-size: 11.03px;font-style: italic;">
+                                                <span>*Minimum points Redemption is: <b>₹250</b></span><br />
+                                                <span>*Maximum points Redemption is: <b>₹</b></span><span style="font-weight: bold;" id="ppmaxamount"></span>
+                                            </div>
+                                        </div>
+
+                                        <!--<div id="pointsPeMobileNumberDiv" class="ap-right-panel-hidden">
+                                            <div class="points-box">
+                                                <label class="cardNumLabelClass">Enter Registered Mobile No.</label>
+                                                <input type="text" id="pointsPeMobileNumber" name="yesBankMobileNumber" placeholder="Enter Mobile Number" class="inputField cardNameField" pattern="\d*" maxlength="10" onkeyup="getPointsPeBalance();"  oncopy="return false" onpaste="return false" ondrop="return false" autocomplete="off" onkeypress="return isNumberKey(event)" style="width: 100%; margin-top: 13px;"/>
+
+                                                <div class="resultDiv">
+                                                    <p class="text-danger1" id="mndtinvldVcr" style="display: none;">Invalid Mobile Number</p>
+                                                    <p class="text-danger1" id="mndtEntrVcr" style="display: none;">Please Enter Number</p>
+                                                    <p class="text-danger1" id="ppMobNumMsg" style="display: none;"></p>
+                                                </div>
+                                            </div>
+                                        </div>-->
+                                    </div>
+                                   <!--<div id="pointsPeDetail" class="vouchagram-main" style="display: none;font-style: normal;font-size: 13px;">
+                                        <div>
+                                            <p>Value of points to be redeemed ₹
+                                                <input type="text" id="ppBalance" name="redeemAmount" placeholder = "Enter Value" style="width: 20%; margin-left: 1%; padding: 2px;border: none;border-bottom: solid; font-size: 18px;" class="pField inputField" pattern="\d*" maxlength="10" onblur="setPayBtnVal();"  oncopy="return false" onpaste="return false" ondrop="return false" autocomplete="off" onkeypress="return isFloatKey(event)" oninput="ppsetinputvalue();"  />
+                                            </p>
+                                            <input type="hidden" id="ppAmountHdn" value="">
+                                            <input type="hidden" id="ppBalanceHdn" value="">
+                                        </div>
+                                        <div style="height: 10px; margin-left: 70%;"> <p id="ppinputErr" style="display: none;color: red;font-size: 80%;"><b style="line-height: 1;">Invalid Input!</b></p></div>
+                                        <div id="ppMsgDiv" style="margin-top:5px;"></div>
+                                        <button type="button" id="ppRedeemBtn" onclick="pointsPeRedeemPoints();" style="display: none;" >Redeem</button>
+                                   </div>-->
+
+                                    <!--<div class="vouchagram-main">
+                                        <div id="ppVerifyOtpDiv" class="vcrCode" style="display: none;">
+                                            <div class="vcrInput" style="height: 71px;">
+                                                <div style="display: flex; align-items: center; gap: 10px; width: 100%;">
+                                                    <input class="pointsPeOtp" type="text" id="ppVerifyOtpTxt" value="" placeholder="Enter OTP" onclick="" pattern="\d*" maxlength="6" autocomplete="off" onkeypress="return isNumberKey(event);"/>
+                                                    <button type="button" id="ppVerifyBtn" class="voucher-btn" onclick="verifyPointsPeOtp();" style="display: none;width: 100%;height: 39px;border-radius: 3.34px;margin-left: -7px;background-color: #000078;color: white;font-style: normal;font-weight: 100;margin-left: -14px;">VERIFY</button>
+                                                </div>
+                                                <button type="button" id="ppSendOtpBtn" class="voucher-btn" onclick="generatePointsPeOtp(); setTimerPointsPe();" style="font-size: 80%;">SEND OTP</button>
+                                            </div>
+                                        </div>
+                                        <div id="ppSendOtpErrDiv" class="text-danger1" style="display: none;" ></div>
+                                        <a id="ppResendOtp" style="display: none; color: #012f6f; cursor: pointer;" onclick="generatePointsPeOtp(); ppDisableResendOtp();"><b>Resend OTP</b></a>
+                                        <span id="pptimerDisplay" style="display:none; color: #012f6f;font-size: smaller;"></span>
+                                    </div>-->
+                                 </div>
+                        </div>
+								<!-- end yesBank (PointsPe) -->
+						</div>
+						<!-- vipin vouchaGram 20230429 starts here -->
+						<div id="VoucherProviders" style="display:none;">
+                            <label for="listOfVoucherProviders" style="color: #012f6f; font-size: larger;"><b>Service Provider/Bank :</b></label>
+                            <select id="listOfVoucherProviders" name="autoDebitAcquirerType" value="" onchange="searchVouchers();">
+                                    <option value="noValue" selected disabled hidden style="color: #012f6f;">Select any service provider</option>
+                                    <option value="vouchaGram" style="font-size: 15px; font-weight: 450;"><b>GyFTR</b></option>
+                                    <option value="advantageClub" style="font-size: 15px; font-weight: 450; "><b>ADVANTAGE CLUB</b></option>
+                                    
+                                    
+                            </select>
+                            </div>
+                        
+
+						<div id="savedLoyalyCustomer" style="display:none;"></div>
+						<div id="giftVoucher_wrapper" class="mndt_wrapper hideBox" style="display:none;">
+							
+
+								<div id="gv-usermobnum">
+
+
+									<!-- onkeydown=" return restrictKeyVpa(event,this);"  -->
+									<label class="cardNumLabelClass">Enter your mobile number for redeeming your gift voucher</label>
+									<input type="text" id="vouchaGramMobileNumber" placeholder="Enter Mobile Number" class="inputField cardNumBoxNewUi" pattern="\d*" maxlength="10" onkeyup="getVouchaGramWalletDetail();"  oncopy="return false" onpaste="return false" ondrop="return false" onkeypress="return isNumberKey(event);" autocomplete="off" style="margin-top: 10px; width: 100%;margin-bottom: 0px;" >
+
+									<!--
+									<span class="placeHolderText placeHolderTextVPA">Enter Your Mobile Number</span>
+									-->
+
+									<!-- <span class="placeHolderText placeHolderTextVPA" style="font-size: 15px; ">** Enter Your Mobile Number For Redeeming Your Gift Voucher</span> -->
+
+									<div class="resultDiv" style = "margin-top: -10px;">
+										<p class="text-danger1" id="mndtinvldVcr" style="display: none;">Invalid Mobile Number</p>
+										<p class="text-danger1" id="mndtEntrVcr" style="display: none;">Please Enter Number</p>
+										<p class="text-danger1" id="vgMobNumMsg" style="display: none;"></p>
+									</div>
+
+									<div id="mndtVpa"></div>
+								</div>
+
+								<div id="vouchagramDetail" class="vouchagram-main" style="display: none;">
+									<!-- class="pl-2" -->
+									<div class="cardNumLabelClass">
+										<small>Use this option to book your travel via GiftVoucher</small>
+										<p style="margin-top: 16px;">Available Balance : <span id="vcrBal">0</span></p>
+										<input type="hidden" id="vgWalletBalanceHdn" value="">
+									</div>
+
+									<div id="vgMsgDiv" style="display: block; margin-top:5px;"></div>
+
+
+
+									<div class="vcrCode">
+										<!--
+										<div class="vcrInput">
+											<input type="text" id="vcrCodeinput" value="" placeholder="Voucher/Gift Certificate Code">
+											<button type="button" id="vcrCodeAddBtn" class="voucher-btn" onclick="rechargeVouchaGramWallet(this);">Add</button>
+										</div>
+										-->
+
+										<div class="vcrvcrCheckboxMain" id="voucherListDiv"></div>
+									</div>
+
+
+
+
+									<!-- start voucha gram otp container -->
+									<div id="vgVerifyOtpDiv" class="vcrCode" style="display: none;">
+										<div style="display: flex; align-items: center; flex-direction: column; margin-top: 10px;">
+                                            <div class="otp-container" id="otpInputs">
+                                                <input type="tel" class="otp-digit" maxlength="1" onkeyup="handleOtpInput(this, 'n2', '')">
+                                                <input type="tel" class="otp-digit" maxlength="1" onkeyup="handleOtpInput(this, 'n3', 'n1')">
+                                                <input type="tel" class="otp-digit" maxlength="1" onkeyup="handleOtpInput(this, 'n4', 'n2')">
+                                                <input type="tel" class="otp-digit" maxlength="1" onkeyup="handleOtpInput(this, '', 'n3')">
+                                            </div>
+                                            <input type="hidden" id="vgVerifyOtpTxt" value="">
+
+                                            <button type="button" id="vgRedeemBtn" class="voucher-btn" onclick="redeemVouchaGramWallet();" style="width: 100%;height: 39px;border-radius: 3.34px;background-color: #000078;color: white;font-style: normal;font-weight: 100;">Verify</button>
+                                        </div>
+										<div id="vgRedeemOtpErrDiv" class="text-danger1" style="display: none;" ></div>
+
+										<!-- Muskan Maheshwari
+                                             Date -14-July-2023
+                                             Description: ResendOtp
+                                        -->
+                                        <a id="vgResendOtp" style="display: none; color: #012f6f;cursor: pointer;" onclick="generateVouchaGramRedeemOtp()"><b>Resend OTP</b></a>
+                                        <span id="vgtimerDisplay" style="display:none; color: #012f6f;font-size: smaller;"></span>
+                                        <span id="vgResendOtpMsg" style="display:none; color: #012f6f;font-size: smaller;">OTP has been sent to your mobile no</span>
+
+
+									</div>
+									<!-- end -->
+
+
+
+
+								</div>
+
+
+
+
+
+
+
+							
+
+						</div>
+
+						<!-- vipin vouchaGram 20230429 end here -->
+
+
+
+						<!-- Advantage club Code starts here -->
+
+						<div id="advanatageClub_wrapper" class="mndt_wrapper hideBox" style="display:none;" >
+							
+
+								<div class="container" id="acMobDiv" style="display: none;">
+
+								</div>
+
+
+
+								<div id="acMobNoDetail">
+									<label class="cardNumLabelClass">Enter Your Mobile Number</label>
+									<input type="phone" id="advantageClubMobileNumber" placeholder="Mobile Number" class="inputField cardNumBoxNewUi" pattern="\d*" maxlength="10"  oncopy="return false" onpaste="return false" ondrop="return false" oninput="advantageClubBalanceDetail();" style="margin-top: 10px; width: 100%;margin-bottom:0px;">
+									<!-- <span class="placeHolderText placeHolderTextVPA">Enter Your Mobile Number</span> -->
+									<div class="resultDiv" style = "margin-top: -10px;">
+										<p class="text-danger1" id="acInvldMobNo" style="display: none;">Invalid Mobile Number</p>
+										<p class="text-danger1" id="acReqMobNo" style="display: none;">Please Enter Number</p>
+
+										<p class="text-danger1" id="acMobNumMsg" style="display: none;"></p>
+
+
+									</div>
+									<div id="mndtVpa"></div>
+								</div>
+								<!-- <button type="button" class="checkBalanceBtn" onclick="eligiblityAccout();">Check Balance</button>
+								<button type="button" class="getOTP" onclick="generateOtp();">OTP</button>
+								<button type="button" class="validateOtp" onclick="validateOtp();">OTP</button>
+								<button type="button" class="redeem" onclick="redeem();">Redeem</button>
+								<button type="button" class="redeem" onclick="refund();">Refund</button> -->
+
+
+								<div id="acWalletDetail" class="advantageclub-main " style="display: none;">
+									<div>
+										<p id="avlBalance" style = "font-size: 14px;">Available AdvantageClub Balance : <span id="acBal"></span></p>
+										<input type="hidden" id="acWalletBalanceHdn" value="">
+									</div>
+
+
+
+
+									<!-- start advantage club otp container -->
+									<div id="acVerifyOtpDiv" class="vcrCode" style="display: none;">
+										<div class="vcrInput">
+                                            <div style="display: flex; align-items: center; flex-direction: column; margin-top: 10px;width: 100%;">
+
+                                               <div class="otp-container" id="acOtpInputs" style = "margin-left: 21px;">
+                                                   <input type="tel" class="otp-digit" maxlength="1" onkeyup="handleAcOtpInput(this, 'n2', '')">
+                                                     <input type="tel" class="otp-digit" maxlength="1" onkeyup="handleAcOtpInput(this, 'n3', 'n1')">
+                                                     <input type="tel" class="otp-digit" maxlength="1" onkeyup="handleAcOtpInput(this, 'n4', 'n2')">
+                                                     <input type="tel" class="otp-digit" maxlength="1" onkeyup="handleAcOtpInput(this, 'n5', 'n3')">
+                                                     <input type="tel" class="otp-digit" maxlength="1" onkeyup="handleAcOtpInput(this, 'n6', 'n4')">
+                                                     <input type="tel" class="otp-digit" maxlength="1" onkeyup="handleAcOtpInput(this, '', 'n5')">
+                                               </div>
+
+                                               <input type="hidden" id="acVerifyOtpTxt" value="">
+
+                                               <button type="button" id="acRedeemBtn" class="advantage-btn" onclick="validateAdvantageClubOtp();">Verify</button>
+                                            </div>
+                                        </div>
+										<div id="acRedeemOtpErrDiv" class="text-danger1" style="display: none;" ></div>
+									</div>
+									<!-- end -->
+								</div>
+							    <!-- corrected Redeem button placement by Rahul -->
+								<div class="payBt">
+                                          <input type="button" id="acVerifyBtn" value="Redeem" class="payment-btn-autoDebit" onclick="generateAdvantageClubRedeemOtp()" style="display:none">
+                                </div>
+
+							
+
+						</div>
+
+						<!--Advantage club Code ends here -->
+
+
+						<!-- autopeVoucher start here -->
+                        <div id="autopeVoucher_wrapper" class="mndt_wrapper hideBox" style="display:none;">
+
+                            
+                                    <div id="autopeVoucherDiv"></div>
+                            
+                        </div>
+                        <!-- autopeVoucher end here -->
+
+                        <!-- Easy Tatkal Start here-->
+                        <div id="autopeEasyTatkal_wrapper" class="mndt_wrapper hideBox" style="display:none;">
+                            
+                                    <div id="autopeEasyTatkalDiv"></div>
+                            
+                        </div>
+                        <!-- Easy Tatkal End here-->
+
+						<!-- <label class="gpayPara">Note: GooglePay is not live on <b>OTM</b> as of now.</label> -->
+
+						<input type="hidden" id="mobTypeAD" name="mopType" value="">
+						<input type="hidden" id="paymentTypeAd" name="paymentType" value="">
+						<input type="hidden" id="amountAD" name="amount" value="100">
+						<!-- <input type="hidden" id="mandateTypeAD" name="mandateType" value=""> -->
+						<input type="text" name="browserName" style="display:none">
+						<input type="text" name="browserVersion" style="display:none">
+						<input type="hidden" name="expiryYear" value="" id="">
+						<input type="hidden" name="expiryMonth" value="" id="">
+
+
+				   <div class="payBt">
+					  	<input type="button" id="autoDebitBtn" value="pay now" class="payment-btn-autoDebit" onclick="autoDebitFn()">
+					  	<!-- start vipin vouchaGram 20230429 -->
+					  	<input type="button" id="vgVerifyBtn" value="Redeem With Vouchers" class="payment-btn-autoDebit" onclick="generateVouchaGramRedeemOtp()" style="display:none">
+
+					  <!-- ###########
+						<input type="button" id="acVerifyBtn" value="Redeem" class="payment-btn-autoDebit" onclick="generateAdvantageClubRedeemOtp()" style="display:none">
+                      -->
+					  	<!-- Prakhar AutoPe Voucher Redeemption
+                            <input type="button" id="avVerifyBtn" value="Redeem" class="payment-btn-autoDebit" onclick="generateAutopeVoucherRedeemOtp()" style="display:none">
+                        end -->
+
+					  	<span id ="showResendOTP"></span>
+                        <span id ="resendTimer"></span>
+
+
+					  	<!-- end vipin vouchaGram 20230429 -->
+					  <div id="manageWidth"style="width: 100%;">
+                      		<label class="canPara">In case of auto cancellation of all waitlisted tatkal tickets, only cancellation charges along with mandate charges will be debited.</label>
+                      </div>
+				   </div>
+				</div>
+				</div>
+					<!--<div id="manageWidth"style="width: 100%;">
+						<label class="canPara">In case of auto cancellation of all waitlisted tatkal tickets, only cancellation charges along with mandate charges will be debited.</label>
+					</div>-->
+					  <p class="returnMerchand margin0">
+						<a href="#" onclick="myCancelAction();" key="ReturnToMerchant" id="ADCancelButton" class="returnMerchand" name="ccCancelButton" theme="simple" ondragstart="return false;" ondrop="return false;">Back</a>
+					  </p>
+					  <div id="pointsPeRightPanel" class="" style="display:none">
+
+                              <!--<div class="ap-left-panel" id="pointsPeChkBxDiv" style="margin-top: -35px;">
+                                  <div id="ppValueOfPointsDiv" style="visibility: hidden; min-height: 15px">
+                                      <div style="font-size: 15.03px;font-family: inter;">
+                                          <p>Total value of points available ₹ <span id="ppValueOfPoints" style="font-weight: bold;">0</span></p>
+                                      </div>
+                                  </div>
+
+                                  <input type="checkbox" id="pointsPeChkBx" onclick="showPointsPeMobileNumberDiv(); togglePointsPeExpansion();" />
+                                  <span style="color:#012f6f"><B>Redeem Your Points</B></span>
+                                  <input type="hidden" id="yesBankRedeemRewardPoints" name="yesBankRedeemRewardPoints" value="N" />
+                                  <br>
+                                  <div style="font-size: 11.03px;font-style: italic;">
+                                      <span>*Minimum points Redemption is: <b>₹250</b></span><br />
+                                      <span>*Maximum points Redemption is: <b>₹</b></span><span style="font-weight: bold;" id="ppmaxamount"></span>
+                                  </div>
+                              </div>-->
+
+                              <div id="pointsPeMobileNumberDiv" class="ap-right-panel-hidden">
+                                  <div class="points-box">
+                                      <label class="cardNumLabelClass">Enter your registered mobile no. with bank</label>
+                                      <input type="text" id="pointsPeMobileNumber" name="yesBankMobileNumber" placeholder="Enter Mobile Number" class="inputField cardNameField" pattern="\d*" maxlength="10" onkeyup="getPointsPeBalance();"  oncopy="return false" onpaste="return false" ondrop="return false" autocomplete="off" onkeypress="return isNumberKey(event)" style="width: 100%; margin-top: 13px;"/>
+
+                                      <div class="resultDiv" style = "margin-top: -13px;">
+                                          <p class="text-danger1" id="mndtinvldVcr" style="display: none;">Invalid Mobile Number</p>
+                                          <p class="text-danger1" id="mndtEntrVcr" style="display: none;">Please Enter Number</p>
+                                          <p class="text-danger1" id="ppMobNumMsg" style="display: none;"></p>
+                                      </div>
+                                  </div>
+                              </div>
+                         <div id="ppValueOfPointsDiv" style="visibility: hidden;">
+                             <div style="font-size: 13px;font-style: normal;">
+                                 <p>Available to redeem: ₹ <span id="ppValueOfPoints" style="font-weight: bold;">0</span></p>
+                             </div>
+                         </div>
+                         <div id="pointsPeDetail" class="vouchagram-main" style="display: none;font-style: normal;font-size: 13px; width: 122%; font-weight: 600;">
+                              <div>
+                                  <p><input type="text" id="ppBalance" name="redeemAmount" style="width: 20%; padding: 2px; text-align: center;border: none;border-bottom: solid; font-size: 18px; margin-bottom: 0px;" class="pField inputField" pattern="\d*" maxlength="10" onblur="setPayBtnVal();"  oncopy="return false" onpaste="return false" ondrop="return false" autocomplete="off" onkeypress="return isFloatKey(event)" oninput="ppsetinputvalue();"  /></p>
+                                  <input type="hidden" id="ppAmountHdn" value="">
+                                  <input type="hidden" id="ppBalanceHdn" value="">
+                              </div>
+                              <div style="height: 10px;"> <p id="ppinputErr" style="display: none;color: red;font-size: 80%;"><b style="line-height: 1;">Invalid Input!</b></p></div>
+                              <div id="ppMsgDiv" style="margin-top:5px;"></div>
+                              <button type="button" id="ppRedeemBtn" onclick="pointsPeRedeemPoints();" style="display: none;" >Redeem</button>
+                         </div>
+
+                          <div class="vouchagram-main" style = "width: 122%;">
+                              <div id="ppVerifyOtpDiv" class="vcrCode" style="display: none;">
+                                  <div class="vcrInput" style="height: 71px;">
+                                      <button type="button" id="ppSendOtpBtn" class="voucher-btn" onclick="handleSendOtpClick();" style="font-size: 80%; width: 100%;">SEND OTP</button>
+                                      <div id="ppOtpInputGroup" style="display: none; flex-direction: column; align-items: center; width: 100%;">
+
+                                          <div class="otp-container" id="ppOtpInputs" style = "margin-left: 7px;">
+                                              <input type="tel" class="otp-digit" maxlength="1" onkeyup="handlePpOtpInput(this, 'n2', '')">
+                                              <input type="tel" class="otp-digit" maxlength="1" onkeyup="handlePpOtpInput(this, 'n3', 'n1')">
+                                              <input type="tel" class="otp-digit" maxlength="1" onkeyup="handlePpOtpInput(this, 'n4', 'n2')">
+                                              <input type="tel" class="otp-digit" maxlength="1" onkeyup="handlePpOtpInput(this, 'n5', 'n3')">
+                                              <input type="tel" class="otp-digit" maxlength="1" onkeyup="handlePpOtpInput(this, 'n6', 'n4')">
+                                              <input type="tel" class="otp-digit" maxlength="1" onkeyup="handlePpOtpInput(this, '', 'n5')">
+                                          </div>
+
+                                          <input type="hidden" id="ppVerifyOtpTxt" value="">
+
+                                          <button type="button" id="ppVerifyBtn" class="voucher-btn" onclick="verifyPointsPeOtp();" style="width: 100%;height: 39px;border-radius: 3.34px;background-color: #000078;color: white;font-style: normal;font-weight: 100;">VERIFY</button>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div id="ppSendOtpErrDiv" class="text-danger1" style="display: none;" ></div>
+                              <a id="ppResendOtp" style="display: none; color: #012f6f; cursor: pointer;" onclick="generatePointsPeOtp(); ppDisableResendOtp();"><b>Resend OTP</b></a>
+                              <span id="pptimerDisplay" style="display:none; color: #012f6f;font-size: smaller;"></span>
+                          </div>
+                       </div>
+			</form>
+					<form action="" target="_parent" method="POST" id="verifyPayForm"></form>
+
+                </div>
+                <div id="iMudra" class="tabBox iMudraBox hideBox">
+                 	<form id="imudraFormId" name="imudraFormName" action="pay" target="_parent" method="post" autocomplete="off">
+
+                        <div class="iMudraInner">
+					  		<label>
+					  		<input type="radio" name="" checked="true">
+					  		<span>Pay using IRCTC iMudra</span>
+					  		</label>
+					  	</div>
+
+					  <input type="hidden" name="paymentType" value="PPI">
+                      <input type="hidden" name="mopType" value="MMWL">
+                      <input type="hidden" id="amountImudra" name="amount" value="">
+						<input type="text" name="browserName" style="display:none">
+						<input type="text" name="browserVersion" style="display:none">
+					  <div>
+					  	<input type="button" id="iMudraBtn" value="pay now" class="payment-btn-iMudra" onclick="submitImudra()">
+					  </div>
+					  <p class="returnMerchand margin0">
+						<a href="#" onclick="myCancelAction();" key="ReturnToMerchant" id="ADCancelButton" class="returnMerchand" name="ccCancelButton" theme="simple" ondragstart="return false;" ondrop="return false;">Back</a>
+					  </p>
+
+
+                 	</form>
+                </div>
+
+				<div id="netBanking" class="tabBox hideBox">
+                            <div style="display: flex; width: 100%; flex-direction: column; gap: 15px;">					<div class="headerIrc">
+							<div class="left-sectionIrc">
+								<img src="../image/IrctciPayNew.svg" alt="IRCTC iPay Logo">
+							</div>
+
+							<div class="right-sectionIrc">
+								<img src="../image/timer.svg" alt="Timer Icon">
+								<span class="timer-textIrc" id = "sessionTimeoutNewNB"></span>
+							</div>
+						</div>
+				    <form id="netBankingFormId" name="netBankingFormName" action="pay" target="_parent" method="post" autocomplete="off">
+					    <input type="hidden" name="paymentType" value="NB">
+						<input type="hidden" name="mopType" id="nbMopType" value="">
+						<input type="hidden" name="bank" id="bank" value="">
+						<input type="hidden" id="amountNetBanking" name="amount" value="">
+						<input type="text" name="browserName" style="display:none">
+						<input type="text" name="browserVersion" style="display:none">
+					<ul class="nbSection" id="dynamicImageList">
+					</ul>
+						<div class="pRow" style = "width: 280px">
+							<!-- <select id="netbankingList" class="netBankingField" name="Bank" onChange="changeBankOption()">
+							</select> -->
+							<input id="netbankingList" onkeypress="return (event.charCode > 64 && event.charCode < 91)|| event.charCode == 32 || (event.charCode > 96 && event.charCode < 123)" list="banks" class="netBankingField" placeholder="Select Bank" onChange="changeBankOption()">
+						</div>
+						<div class="resultDivNb">
+							<p class="red1" id="bankErr">Please Select Bank</p>
+						</div>
+						<div class="CTA mob-btn" id="pay-now">
+							<!-- <input type="button" class="payment-btn" id="netBankingBtn" onclick="submitNetbanking()" value="pay"> -->
+							<input type="button" class="payment-btn" id="netBankingBtn" onclick="isValidBankName()" value="pay">
+						</div>
+						</div>
+
+						<p class="returnMerchand margin0">
+							<a href="#" onclick="myCancelAction();" key="ReturnToMerchant" id="ADCancelButton" class="returnMerchand" name="ccCancelButton" theme="simple" ondragstart="return false;" ondrop="return false;">Back</a>
+						</p>
+
+					</form>
+				</div>
+			</div>
+			<div id="sidebar">
+                       <div class="PhoneOrderSumry">
+                          
+                          <div><span>Order ID</span><span>100006382361856</span></div>
+                          <div><span>Amount Payable</span><span id="amountPayablePhone"></span></div>
+                       </div>
+            				<!-- <div class="orderSum clearfix"> -->
+            					<!-- <div class="leftOrder" id="leftOrder">
+            						<img class="left-dot" src="../image/left-dot.jpg"/>
+            					</div>
+            					<div class="rightOrder">
+            						<img class="right-dot" src="../image/right-dot.jpg"/>
+            						<div class="midSec"> -->
+            			    <!-- <dl class="middleSecSummary" id="middleSecSummary"> -->
+            				
+            			   <input type="hidden" id="ccsurchargeAmount" name="ccsurchargeAmount" value=246.27>
+                           <input type="hidden" id="ccsurchargeTotal" name="ccsurchargeTotal" value=11840.77>
+                           <input type="hidden" id="dcsurchargeAmount" name="ccsurchargeAmount" value=123.13>
+                           <input type="hidden" id="dcsurchargeTotal" name="dcsurchargeTotal" value=11717.63>
+                           <input type="hidden" id="currencyCode" name="currencyCode" value=INR>
+
+                           <div class="card card-box1" style = "width: 100%;">
+                              <div class="session-timer">
+                                  Session Valid For: <span id="sidebarTimer">--:--</span>
+                              </div>
+
+                              <div class="brand-section" style="display: flex ;gap: 45px;">
+                                  <div style="display: flex;justify-content: center;/*! align-content: ; */align-items: center;background-color: f2f4f7;border-radius: 15px;">
+                                    <img src="../image/IRCTCNew.svg" alt="IRCTC Logo" style="height: 100%;width: 65%; padding: 40px 25px;" /></div>
+                                  <div>
+                                      <div class="payment-req-text" style="display: flex ;flex-direction: column; gap: 5px; padding-top: 15px;">Payment Request from IRCTC</div>
+                                      <div class="main-amount" id="amountPayablePhoneNew">₹ 11594.50</div>
+                                  </div>
+                              </div>
+                           </div>
+
+                           <div class="card card-box2" style = "display: flex;flex-direction: column; width: 100%;">
+                              <div class="details-header">Payment Details</div>
+
+                              <div class="detail-row">
+                                  <span class="label">Order ID</span>
+                                  <span class="val">100006382361856</span>
+                              </div>
+
+                              <div class="detail-row">
+                                  <span class="label">Amount</span>
+                                  <span class="val" id="amount"><big id="innerAmount" style="font-size:inherit;">INR 11594.50</big></span>
+                              </div>
+
+                              <div class="detail-row">
+                                  <span class="label" id="surchargeName">Transaction Charges</span>
+                                  <span class="val" id="surcharge" style="color: #666;"></span>
+                              </div>
+
+                              <div class="divider" style = "border-top: 3px dashed #e0e0e0;"></div>
+
+                              <div class="total-row" style = "display: flex;flex-direction: row;justify-content: space-between;font-size: 18px; /*padding-right: 60px;*/">
+                                  <span id="totalAmountName">Total Payment</span>
+                                  <span id="totalAmount">₹ 11594.50</span>
+                              </div>
+                           </div>
+
+                           <div class="orderfootDetails desktopOrderFoot" id="orderfootDetails2" style="display:none;">
+                              2.00 % + 2.00 Applicable Taxes for all domestic Credit Cards...
+                           </div>
+
+                        </div>
+		<div class="orderfootDetails phoneOrderFoot" id="orderfootDetails1">
+			<small>2.00 % + 2.00 Applicable Taxes for all domestic Credit Cards
+NIL,For all Domestic Debit Cards transaction Amount upto Rs. 2,000.
+2.00 % + 2.00 Applicable Taxes,For all Domestic Debit Cards transaction Amount above Rs. 2,000. NIL,For all Domestic Debit Cards transaction Amount upto Rs. 2,000.
+2.00 % + 2.00 Applicable Taxes,For all Domestic Debit Cards transaction Amount above Rs. 2,000.</small>
+		</div>
+
+		</div>
+
+	</div>
+
+
+	<div class="container">
+		<div class="footer clearfix">
+
+			<div class="right-footer">
+			    <div class="powrdBy">Powered by</div>
+				<img src="../image/newMMADPAY.png" alt="MMAD Logo" class="paylogo">
+			</div>
+			<div class="right-footer2 clearfix">
+				<div class="float-left"><img src="../image/secure.png" alt="Secure Logo" ></div>
+				<div  class="float-right">
+					<p>Safe and Secure Payments.</p>
+				</div>
+			</div>
+			<div class="left-footer">
+				<img src="../image/visa-foot.svg" class="visa-foot" alt="visa" title="visa" />
+		        <img src="../image/master-foot.svg" class="master-foot" alt="master" title="master"/>
+				<img src="../image/RuPayLogo.png" class="master-foot" alt="rupay" title="rupay"/>
+		        <img src="../image/pci-foot.svg" class="pci-foot" alt="pci" title="pci"/>
+			</div>
+		</div>
+		<div class="footerMob">
+			<div class="left-footer">
+		        <img src="../image/visa-foot.svg" class="visa-foot" alt="visa" title="visa" />
+		        <img src="../image/master-foot.svg" class="master-foot" alt="master" title="master"/>
+		        <img src="../image/pci-foot.svg" class="pci-foot" alt="pci" title="pci"/>
+			</div>
+			<div class="clearfix">
+				<div class="right-footer">
+			    <div class="powrdBy">Powered by</div>
+				<img src="../image/newMMADPAY.png" alt="MMAD Logo" class="paylogo">
+			</div>
+			<div class="right-footer2 clearfix">
+				<div class="float-left"><img src="../image/secure.png" alt="Secure Logo" ></div>
+				<div  class="float-right">
+					<p>Safe and Secure Payments.</p>
+				</div>
+			</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- start transaction limit error popup -->
+    <div class="popup-overlay" id="txnLmtErrPopupOverlay">
+		<div class="popup" id="txnLmtErrPopup">
+			<div class="popup-content">
+
+				<p>You have exceeded your transaction limit for the day / month.</p>
+				<p>Your transaction cannot be processed.</p>
+
+				<a href="https://www.irctc.co.in/">
+					<button>Go to Homepage</button>
+				</a>
+			</div>
+
+		</div>
+
+	</div>
+	<!-- stop transaction limit error popup -->
+
+
+
+<script type="text/javascript">
+
+
+var foo = document.getElementById('cardNumber');
+var ajax = {};
+	ajax.x = function () {
+		if (typeof XMLHttpRequest !== 'undefined') {
+			return new XMLHttpRequest();
+		}
+		var versions = [
+			"MSXML2.XmlHttp.6.0",
+			"MSXML2.XmlHttp.5.0",
+			"MSXML2.XmlHttp.4.0",
+			"MSXML2.XmlHttp.3.0",
+			"MSXML2.XmlHttp.2.0",
+			"Microsoft.XmlHttp"
+		];
+
+		var xhr;
+		for (var i = 0; i < versions.length; i++) {
+			try {
+				xhr = new ActiveXObject(versions[i]);
+				break;
+			} catch (e) {
+			}
+		}
+		return xhr;
+	};
+
+	ajax.send = function (url, callback, method, data) {
+
+			async = true;
+
+		var x = ajax.x();
+		x.open(method, url);
+		x.onreadystatechange = function () {
+			if (x.readyState == 4) {
+				var json = JSON.parse(x.response);
+
+			}
+		};
+		if (method == 'POST') {
+			x.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+		}
+		x.send(data)
+	};
+
+	ajax.post = function (url, data, callback) {
+		var query = [];
+		for (var key in data) {
+			query.push(encodeURIComponent(key) + '=' + encodeURIComponent(data[key]));
+		}
+		ajax.send(url, callback, 'POST', query.join('&'))
+	};
+</script>
+<form id="upiResponseForm" name="upiResponseForm" target="_parent" method="post">
+</form>
+
+
+
+<form id="googlePayResponseForm" name="googlePayResponseForm" target="_parent" method="post">
+</form>
+
+
+
+<form id="upiIcici" name="upiIcici" method="get">
+</form>
+
+
+
+<!-- start vipin vouchaGram 20230429 -->
+<form id="vouchaGramResponseForm" name="vouchaGramResponseForm" target="_parent" method="post">
+</form>
+
+
+
+<!-- end vipin vouchaGram 20230429 -->
+<form id="advantageClubResponseForm" name="advantageClubResponseForm" target="_parent" method="post">
+</form>
+
+
+
+<!-- start vipin autopeVoucher -->
+<form id="autopeVoucherResponseForm" name="autopeVoucherResponseForm" target="_parent" method="post">
+</form>
+
+
+
+<!-- end vipin autopeVoucher -->
+<!-- start Rahul autopeEasyTatkal -->
+<form id="autopeEasyTatkalResponseForm" name="autopeEasyTatkalResponseForm" target="_parent" method="post">
+</form>
+
+
+
+<!-- end Rahul autopeEasyTatkal -->
+<script>
+
+
+	/* Author : Vijay
+	*  Dated : 2021-08-30
+	*/
+	var loggercssFlag=true;
+	if(loggercssFlag){
+			var cssId = 'logger';
+
+			var head  = document.getElementsByTagName('head')[0];
+			var link  = document.createElement('link');
+			link.id   = cssId;
+			link.rel  = 'stylesheet';
+			link.type = 'text/css';
+			link.href = '../css/logger.css?'+document.getElementById("orderId").innerHTML+"=web";
+			link.media = 'all';
+			head.appendChild(link);
+	}
+
+	/* Author : Vijay
+	*  Dated : 2021-09-11
+	*/
+
+	var link = document.getElementById('mandateDCOTM');
+	link.click();
+
+	// $(document).ready(function() {
+	document.addEventListener("DOMContentLoaded", function() {
+		updateIsPaymentPageLoadedFlag();
+   	});
+
+	</script>
+
+</body>
+</html>
