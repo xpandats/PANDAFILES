@@ -1,0 +1,69 @@
+[INFO]:PR1::NDLS_CPR_12566_3A_PT_2P_NetworkMonitor_https://www.irctcipay.com/pgui/jsp/surchargePaymentPage.jsp_URL: https://www.irctcipay.com/pgui/jsp/upiPay
+Payload:
+------WebKitFormBoundaryCwStWE4BWJIhgqLW
+Content-Disposition: form-data; name="token"
+
+78BYRCGLXAPNUUFN8OK9NI2U1RC1TLEY
+------WebKitFormBoundaryCwStWE4BWJIhgqLW
+Content-Disposition: form-data; name="vpa"
+
+ddsd12@ybl
+------WebKitFormBoundaryCwStWE4BWJIhgqLW
+Content-Disposition: form-data; name="upiCustName"
+
+dummy
+------WebKitFormBoundaryCwStWE4BWJIhgqLW
+Content-Disposition: form-data; name="paymentType"
+
+UP
+------WebKitFormBoundaryCwStWE4BWJIhgqLW
+Content-Disposition: form-data; name="mopType"
+
+UP
+------WebKitFormBoundaryCwStWE4BWJIhgqLW
+Content-Disposition: form-data; name="amount"
+
+₹ 6814.50
+------WebKitFormBoundaryCwStWE4BWJIhgqLW
+Content-Disposition: form-data; name="currencyCode"
+
+356
+------WebKitFormBoundaryCwStWE4BWJIhgqLW
+Content-Disposition: form-data; name="browserName"
+
+Chrome
+------WebKitFormBoundaryCwStWE4BWJIhgqLW
+Content-Disposition: form-data; name="browserVersion"
+
+141
+------WebKitFormBoundaryCwStWE4BWJIhgqLW--
+
+Response:
+{
+  "browserName": "Chrome",
+  "browserVersion": "141",
+  "cardHolderType": null,
+  "cardNumber": null,
+  "imageData": null,
+  "isIntent": null,
+  "isQr": null,
+  "isUOV": null,
+  "mandateType": null,
+  "mopType": "UP",
+  "paymentType": "UP",
+  "paymentsRegion": null,
+  "pgRefHash": "54C5D996BB13634537CAA5D883D7D234A766470D3460541731EE82D7F0DDFF1C",
+  "pgRefNum": "7444660218100145",
+  "responseCode": "000",
+  "responseFields": {
+    "RETURN_URL": "https://www.wps.irctc.co.in/eticketing/BankResponse",
+    "encdata": "200DA7FE6BDD9C4E7027BB061BC860E8E2FC237E31B720D7CFE50BE083814773CCEEE53A58D6347DA9F2DC387F2ADD8FDCC92D0D7CACDCFA993685BEF2AB3AE50FA2455AFA5DA207757860963F21920D3BE56427718E1A73F27369A4822E7DE4533760E6AF068BAF84CDC5C83D13175DCF6AD59935EDFAB0145161E783E9B9B5A1CA5BA9E461E82D233145E1A96E926208929F626D084D565970550E84AEFD469FAB830AFD6B97E168B665BA5590691E8CA9ABE587FB1F62F4C0E826CB611A872EBDCA854C0E5441C83EBF014CEF3BA9ACBED589A338530BA4997A52E7B38C48EE00162260FF78DC62A94E2E96EFA975722C6FF652439AEB2F7B66F64B8AFD3AE7C22CE53D6E6B3604133259AC67A84684A5E9B991B0F0CD6849C094797D2AD8"
+  },
+  "responseMessage": "SUCCESS",
+  "serviceProvider": null,
+  "transactionStatus": "Sent to Bank",
+  "txnType": "UP",
+  "uovUrl": null,
+  "vpa": "ddsd12@ybl",
+  "vpaPhone": null
+}
