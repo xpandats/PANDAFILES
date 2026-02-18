@@ -1,0 +1,60 @@
+[INFO]:PR2::NDLS_CPR_12566_3A_PT_2P_NetworkMonitor_https://www.irctc.co.in/nget/train-search_URL: https://www.irctc.co.in/eticketing/protected/mapps1/recentTxnsDetails
+Payload:
+NULL
+Response:
+{
+  "upcomingjourneyList": [
+    {
+      "txnType": "Upcomming Journey",
+      "reservationId": "100006363577558",
+      "pnrNumber": "6165247914",
+      "boardingDate": "2026-02-18T18:40:00",
+      "trainNumber": "53047",
+      "trainName": "VISWABHARTI PSG",
+      "fromStation": "BWN",
+      "toStation": "KAN",
+      "bookingStatus": "Booked",
+      "bookingDate": "2026-02-10T09:24:24",
+      "arrivalDate": "2026-02-18T19:06:00",
+      "amountPaidbyUser": "32.25",
+      "rrHotelFlag": "YN",
+      "bookingClass": "2S",
+      "transactionId": "100006363577558"
+    },
+    {
+      "txnType": "Upcomming Journey",
+      "reservationId": "100006363563369",
+      "pnrNumber": "6265246003",
+      "boardingDate": "2026-02-18T18:40:00",
+      "trainNumber": "53047",
+      "trainName": "VISWABHARTI PSG",
+      "fromStation": "BWN",
+      "toStation": "KAN",
+      "bookingStatus": "Booked",
+      "bookingDate": "2026-02-10T08:40:37",
+      "arrivalDate": "2026-02-18T19:06:00",
+      "amountPaidbyUser": "32.25",
+      "rrHotelFlag": "YN",
+      "bookingClass": "2S",
+      "transactionId": "100006363563369"
+    }
+  ],
+  "lastTxnList": [
+    {
+      "txnType": "Last Transactions",
+      "reservationId": "100006382375103",
+      "boardingDate": "2026-02-18T00:00:00",
+      "trainNumber": "53047",
+      "trainName": "VISWABHARTI PSG",
+      "fromStation": "BWN",
+      "toStation": "KAN",
+      "bookingStatus": "Payment Initiated",
+      "bookingDate": "2026-02-18T09:47:53",
+      "reservationMode": "IRCTC WEBSITE",
+      "bookingClass": "2S",
+      "transactionId": "100006382375103"
+    }
+  ],
+  "displayDisable": "false",
+  "timeStamp": "2026-02-18T10:01:29.122"
+}
