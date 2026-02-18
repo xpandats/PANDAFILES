@@ -1,0 +1,8 @@
+[INFO]:PR2::NDLS_CPR_12566_3A_PT_2P_NetworkMonitor_https://www.irctc.co.in/nget/train-search_URL: https://sync6.im-apps.net/9001/pid?ref=null&page=https://www.irctc.co.in/nget/train-search
+Payload:
+NULL
+Response:
+{
+  "uid": "b.50a58c1847c4b769",
+  "ppid": "97889ea01558fe1cd30ead81aebf87e6"
+}
