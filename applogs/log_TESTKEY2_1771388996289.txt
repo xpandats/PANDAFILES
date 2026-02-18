@@ -1,0 +1,64 @@
+[INFO]:PR1::HWH_ST_12834_SL_PT_2P_NetworkMonitor_https://www.irctc.co.in/nget/booking/train-list_URL: https://www.irctc.co.in/eticketing/protected/mapps1/altAvlEnq/TC
+Payload:
+{
+  "srcStn": "HWH",
+  "destStn": "ST",
+  "jrnyClass": "",
+  "jrnyDate": "20260219",
+  "quotaCode": "PT",
+  "currentBooking": "false",
+  "flexiFlag": false,
+  "handicapFlag": false,
+  "ticketType": "E",
+  "loyaltyRedemptionBooking": false,
+  "ftBooking": false
+}
+Response:
+{
+  "trainBtwnStnsList": [
+    {
+      "trainNumber": "12834",
+      "trainName": "HWH ADI SUF EXP",
+      "fromStnCode": "HWH",
+      "toStnCode": "ST",
+      "arrivalTime": "07:55",
+      "departureTime": "23:05",
+      "distance": "1859",
+      "duration": "32:50",
+      "runningMon": "Y",
+      "runningTue": "Y",
+      "runningWed": "Y",
+      "runningThu": "Y",
+      "runningFri": "Y",
+      "runningSat": "Y",
+      "runningSun": "Y",
+      "avlClasses": [
+        "2A",
+        "3A",
+        "SL"
+      ],
+      "trainType": [
+        "O"
+      ],
+      "atasOpted": "false",
+      "flexiFlag": "false",
+      "trainOwner": "0",
+      "trainsiteId": "C"
+    }
+  ],
+  "quotaList": [
+    "SS",
+    "PT",
+    "GN",
+    "HP",
+    "LD",
+    "PH",
+    "DP",
+    "TQ"
+  ],
+  "timeStamp": "2026-02-18T09:59:25.948",
+  "vikalpInSpecialTrainsAccomFlag": "false",
+  "oneStopJourny": "false",
+  "serveyFlag": "false",
+  "alternateEnquiryFlag": "false"
+}
