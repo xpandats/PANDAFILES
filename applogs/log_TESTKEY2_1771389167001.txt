@@ -1,0 +1,42 @@
+[INFO]:PR1::HWH_ST_12834_SL_PT_2P_NetworkMonitor_https://www.irctcipay.com/pgui/jsp/surchargelocale?request_localeA=&defaultLanguageA=_URL: https://www.irctc.co.in/eticketing/protected/mapps1/bookingInitPayment/mlrja0e8?insurenceApplicable=
+Payload:
+{
+  "bankId": 113,
+  "txnType": 1,
+  "paramList": [],
+  "amount": "11594.5",
+  "transationId": 0,
+  "txnStatus": 1
+}
+Response:
+{
+  "transationId": "0",
+  "bankId": "113",
+  "txnType": "0",
+  "txnStatus": "12",
+  "txnDate": "2026-02-18T10:02:41.82",
+  "amount": "11594.5",
+  "timeStamp": "2026-02-18T10:02:41.878",
+  "upiModeOpted": "0",
+  "remainingBalance": "0.0",
+  "loyaltyNum": "0",
+  "withoutOTP": "false",
+  "paramList": [
+    {
+      "key": "TXN",
+      "value": "100006382361856"
+    },
+    {
+      "key": "REDIRECT",
+      "value": "TRUE"
+    },
+    {
+      "key": "SEGREGATE_BOOKING_ENQUIRY",
+      "value": "1"
+    },
+    {
+      "key": "MIN_PAYMENT_DURATION",
+      "value": "10000"
+    }
+  ]
+}
