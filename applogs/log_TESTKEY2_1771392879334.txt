@@ -1,0 +1,39 @@
+[INFO]:PR1::BWN_KAN_53047_2S_GN_1P_NetworkMonitor_https://www.irctc.co.in/nget/booking/train-list_URL: https://www.irctc.co.in/eticketing/protected/mapps1/avlFarenquiry/53047/20260218/BWN/KAN/2S/GN/N
+Payload:
+{
+  "paymentFlag": "N",
+  "concessionBooking": false,
+  "ftBooking": false,
+  "loyaltyRedemptionBooking": false,
+  "ticketType": "E",
+  "quotaCode": "GN",
+  "moreThanOneDay": true,
+  "returnJourney": false,
+  "trainNumber": "53047",
+  "fromStnCode": "BWN",
+  "toStnCode": "KAN",
+  "isLogedinReq": true,
+  "journeyDate": "20260218",
+  "classCode": "2S"
+}
+Response:
+{
+  "reqEnqParam": "53047#BWN#KAN#BWN#2S",
+  "quota": "GN",
+  "enqClass": "2S",
+  "from": "BWN",
+  "to": "KAN",
+  "trainNo": "53047",
+  "errorMessage": "There seems to be a connection issue with your request. please try after some time",
+  "errorIndex": "50074",
+  "travelInsuranceCharge": "0.0",
+  "travelInsuranceServiceTax": "0.0",
+  "insuredPsgnCount": "0",
+  "timeStamp": "2026-02-18T11:04:38.869",
+  "otpAuthenticationFlag": "0",
+  "reTry": "false",
+  "taRdsFlag": "false",
+  "upiRdsFlag": "false",
+  "rdsTxnPwdFlag": "false",
+  "ftBookingMsgFlag": "false"
+}
