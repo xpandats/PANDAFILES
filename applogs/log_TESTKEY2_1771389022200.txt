@@ -1,0 +1,84 @@
+[INFO]:PR1::HWH_ST_12834_SL_PT_2P_NetworkMonitor_https://www.irctc.co.in/nget/booking/train-list_URL: https://www.irctc.co.in/eticketing/protected/mapps1/avlFarenquiry/12834/20260219/HWH/ST/3A/PT/N
+Payload:
+{
+  "paymentFlag": "N",
+  "concessionBooking": false,
+  "ftBooking": false,
+  "loyaltyRedemptionBooking": false,
+  "ticketType": "E",
+  "quotaCode": "PT",
+  "moreThanOneDay": true,
+  "returnJourney": false,
+  "trainNumber": "12834",
+  "fromStnCode": "HWH",
+  "toStnCode": "ST",
+  "isLogedinReq": true,
+  "journeyDate": "20260219",
+  "classCode": "3A"
+}
+Response:
+{
+  "trainName": "HWH ADI SUF EXP",
+  "distance": "1859",
+  "reqEnqParam": "12834#HWH#ST#HWH#3A",
+  "quota": "PT",
+  "enqClass": "3A",
+  "from": "HWH",
+  "to": "ST",
+  "trainNo": "12834",
+  "baseFare": "1862",
+  "reservationCharge": "40",
+  "superfastCharge": "45",
+  "fuelAmount": "0.0",
+  "totalConcession": "0",
+  "tatkalFare": "0",
+  "serviceTax": "118.0",
+  "otherCharge": "0",
+  "cateringCharge": "0",
+  "dynamicFare": "400",
+  "totalFare": "2465",
+  "wpServiceCharge": "30.0",
+  "wpServiceTax": "5.4",
+  "travelInsuranceCharge": "0.0",
+  "travelInsuranceServiceTax": "0.0",
+  "insuredPsgnCount": "0",
+  "nextEnqDate": "2026-02-20T00:00:00",
+  "preEnqDate": "2026-02-18T00:00:00",
+  "timeStamp": "2026-02-18T10:00:04.158",
+  "otpAuthenticationFlag": "0",
+  "cateringFlag": "A",
+  "totalCollectibleAmount": "2500.4",
+  "avlDayList": [
+    {
+      "availablityDate": "19-2-2026",
+      "availablityStatus": "AVAILABLE-0076",
+      "reasonType": "S",
+      "availablityType": "1",
+      "currentBkgFlag": "N",
+      "wlType": "8224",
+      "delayFlag": "N",
+      "delay": "0"
+    }
+  ],
+  "informationMessage": [
+    {
+      "message": "* IR recovers only 57% of cost of travel on an average.\n* Rounding off  to next multiple of Rs. 5 is included in Base fare.\n* Final fare based on passenger(s) added will be displayed on REVIEW JOURNEY page including concessions / dynamic fare charges etc. whichever applicable.\n",
+      "popup": "false",
+      "paramName": "FARE_BREAKUP"
+    },
+    {
+      "message": "Forgo Concession Opted",
+      "popup": "false",
+      "paramName": "FORGO_CONC"
+    }
+  ],
+  "reTry": "false",
+  "altAvlEnabled": "true",
+  "altTrainEnabled": "true",
+  "altClsEnabled": "true",
+  "taRdsFlag": "false",
+  "upiRdsFlag": "false",
+  "rdsTxnPwdFlag": "false",
+  "ftBookingMsgFlag": "false",
+  "lastUpdateTime": "0 Minutes and 4 Seconds"
+}
