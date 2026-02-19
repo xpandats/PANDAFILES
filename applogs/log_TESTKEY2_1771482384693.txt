@@ -1,0 +1,8 @@
+[INFO]:PR3::BWN_KAN_53047_2S_GN_1P_NetworkMonitor_https://www.irctc.co.in/nget/train-search_URL: https://www.irctc.co.in/authprovider/webtoken
+Payload:
+grant_type=password&data=i3yXfsHWti1N6JutlK7TSBS1TKxWeLUipncAXw4AFTf1voii1bdAXWEd6Xv/KYzf&captcha=NA&uid=1771482372954:31191e11-0018-4961-b171-16c883757b57&otpLogin=false&encodedPwd=true
+Response:
+{
+  "error": "unauthorized",
+  "error_description": "Incorrect UserName or Password. If you have recently changed it, use the latest one. You have 2 attempts remaining."
+}
