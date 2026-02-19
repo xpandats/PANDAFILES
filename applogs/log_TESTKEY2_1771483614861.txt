@@ -1,0 +1,8 @@
+[INFO]:PR2::BWN_KAN_53047_2S_GN_1P_NetworkMonitor_https://www.irctcipay.com/pgui/jsp/surchargePaymentPage.jsp_URL: https://www.irctcipay.com/pgui/image/upiLogo.svg
+Payload:
+NULL
+Response:
+<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path opacity="0.3" d="M15.5831 -6.04287e-07L22.0008 12.5017L8.50977 25L15.5831 -6.04287e-07Z" fill="#666666"/>
+<path d="M11.0835 -6.04287e-07L17.4965 12.5017L4 25L11.0835 -6.04287e-07Z" fill="#666666"/>
+</svg>
