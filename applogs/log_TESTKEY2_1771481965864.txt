@@ -1,0 +1,10 @@
+[INFO]:PR2::BWN_KAN_53047_2S_GN_1P_NetworkMonitor_https://www.irctc.co.in/nget/profile/change-password_URL: https://www.irctc.co.in/authprovider/webtoken
+Payload:
+grant_type=password&data=4eur6yBX9+0il0oyQYbZA20rlksZJ3nuI6iooX5DtDpZXiFLVZ0U4sMtj/sJhHLy&captcha=NA&uid=1771481950996:ef71154d-0a9f-4819-b520-f78e3c46060f&otpLogin=false&encodedPwd=true
+Response:
+{
+  "access_token": "7be918c9-e0ac-4a5c-9f5b-e3b6e14b2590",
+  "token_type": "bearer",
+  "refresh_token": "F52AADF6B7FB823F6E793C719A4C4F92",
+  "expires_in": 297
+}
