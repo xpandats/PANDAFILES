@@ -1,0 +1,5 @@
+[INFO]:PR1::NDLS_CPR_12566_1P_NetworkMonitor_https://www.irctc.co.in/nget/error_URL: https://www.irctc.co.in/eticketing/protected/mapps1/avlFarenquiry/12566/20260421/NDLS/CPR/3A/GN/N
+Payload:
+{"paymentFlag":"N","concessionBooking":false,"ftBooking":false,"loyaltyRedemptionBooking":false,"ticketType":"E","quotaCode":"GN","moreThanOneDay":true,"returnJourney":false,"trainNumber":"12566","fromStnCode":"NDLS","toStnCode":"CPR","isLogedinReq":true,"journeyDate":"20260421","classCode":"3A"}
+Response:
+{"error":"invalid_token","error_description":"Access token expired: 8ee88790-6151-43ba-b89c-d18474934860"}
