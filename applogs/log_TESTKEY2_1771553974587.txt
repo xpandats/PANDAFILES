@@ -1,0 +1,5 @@
+[INFO]:PR1::HWH_ST_12834_SL_PT_2P_NetworkMonitor_https://www.irctc.co.in/nget/booking/train-list_URL: https://www.irctc.co.in/eticketing/protected/mapps1/avlFarenquiry/12834/20260222/HWH/ST/SL/PT/N
+Payload:
+{"paymentFlag":"N","concessionBooking":false,"ftBooking":false,"loyaltyRedemptionBooking":false,"ticketType":"E","quotaCode":"PT","moreThanOneDay":true,"returnJourney":false,"trainNumber":"12834","fromStnCode":"HWH","toStnCode":"ST","isLogedinReq":true,"journeyDate":"20260222","classCode":"SL"}
+Response:
+{"reqEnqParam":"12834#HWH#ST#HWH#SL","quota":"PT","enqClass":"SL","from":"HWH","to":"ST","trainNo":"12834","errorMessage":"Date outside Tatkal ARP- (50018)\n","timeStamp":"2026-02-20T07:49:34.1","otpAuthenticationFlag":"0","taRdsFlag":"false","upiRdsFlag":"false","rdsTxnPwdFlag":"false","ftBookingMsgFlag":"false"}
