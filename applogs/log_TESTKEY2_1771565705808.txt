@@ -1,0 +1,1 @@
+[INFO]:PR2::HWH_ST_12834_SL_PT_2P_NetworkMonitor_https://www.irctcipay.com/pgui/jsp/surchargePaymentPage.jsp_LogToApi Failed (Size:7253): Server error
