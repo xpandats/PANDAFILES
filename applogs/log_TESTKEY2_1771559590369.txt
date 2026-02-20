@@ -1,0 +1,5 @@
+[INFO]:PR1::BWN_KAN_53047_2S_GN_1P_NetworkMonitor_https://www.irctc.co.in/nget/train-search_URL: https://www.irctc.co.in/eticketing/protected/mapps1/altAvlEnq/TC
+Payload:
+NULL
+Response:
+{"errorMessage":"No direct trains available between the inputted stations. Would you like to search the in-direct journey trains? (Only enquiry is available currently.)","timeStamp":"2026-02-20T09:23:09.897","vikalpInSpecialTrainsAccomFlag":"false","oneStopJourny":"true","serveyFlag":"false","alternateEnquiryFlag":"false"}
