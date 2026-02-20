@@ -1,0 +1,5 @@
+[INFO]:PR1::R_DURG_12860_SL_GN_1P_NetworkMonitor_https://www.irctc.co.in/nget/train-search_URL: https://www.irctc.co.in/authprovider/webtoken
+Payload:
+grant_type=password&data=xBW5on79sZe59xPreQPZFs8V5KIxknUp49kXJGs6FNQ4InO/YEo1Wv5I7xUzMVoxh/XwL3uuNbh7jEaJAgRw4A==&captcha=NA&uid=1771571241582:57a7b23c-e2d7-4560-9779-588c7c28e6bb&otpLogin=false&encodedPwd=true
+Response:
+{"access_token":"98f8de0e-60dc-4674-b19d-85f12c7af577","token_type":"bearer","refresh_token":"D1F4B4B054469A289B85F69B345E5FE5","expires_in":1799}
