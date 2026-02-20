@@ -1,0 +1,42 @@
+[INFO]:PR2::NDLS_CPR_12566_1P_NetworkMonitor_https://www.irctcipay.com/pgui/jsp/surchargePaymentPage.jsp_URL: https://www.irctcipay.com/pgui/jsp/upiPay
+Payload:
+------WebKitFormBoundarybLrJlgTYOqC0twqU
+Content-Disposition: form-data; name="token"
+
+N7XEFMXG5NMIO0KKX47N7UIVPAYLYSK1
+------WebKitFormBoundarybLrJlgTYOqC0twqU
+Content-Disposition: form-data; name="upiCustName"
+
+dummy
+------WebKitFormBoundarybLrJlgTYOqC0twqU
+Content-Disposition: form-data; name="paymentType"
+
+UP
+------WebKitFormBoundarybLrJlgTYOqC0twqU
+Content-Disposition: form-data; name="mopType"
+
+UP
+------WebKitFormBoundarybLrJlgTYOqC0twqU
+Content-Disposition: form-data; name="amount"
+
+₹ 2743.60
+------WebKitFormBoundarybLrJlgTYOqC0twqU
+Content-Disposition: form-data; name="currencyCode"
+
+356
+------WebKitFormBoundarybLrJlgTYOqC0twqU
+Content-Disposition: form-data; name="IsQr"
+
+Y
+------WebKitFormBoundarybLrJlgTYOqC0twqU
+Content-Disposition: form-data; name="browserName"
+
+Chrome
+------WebKitFormBoundarybLrJlgTYOqC0twqU
+Content-Disposition: form-data; name="browserVersion"
+
+141
+------WebKitFormBoundarybLrJlgTYOqC0twqU--
+
+Response:
+{"browserName":"Chrome","browserVersion":"141","cardHolderType":null,"cardNumber":null,"imageData":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsAQAAAABRBrPYAAADCklEQVR42u2aMa6kMBBEGxEQcgTfBC42EkhcbLgJRyB0gOitKrOrHf4Em61bgoA/mDeBx+7q6vY3/5drtwd7sAd7sAf7P1g2XHrufH+Zr/u02ejLhuE2CDa6b7nxI/nZ+2aDTS4W75Yg2GDt5m+87Mpj7wXL1kfC8rhbwife+iN1695Gw/yNdfLVZ7MGt+60UJj2mxmi5cS4Hjn+dVtWijHqsUTLdrt9EYdKsXIx4BE3LUNmTtbs01eJrhPDTFuK7WHYYNpvUOF1fzFupigYppapuJ3kquGNIqCJh8AU8B20l5njZbwljTF4YmB4OpJxun6C0FazcW8dITPFwJDtMNBgg3F860rwIId8ClfNGCzIXCwIRlr6KTgrJJJEPxUG09SUORYsUX8gkZislMfA+Dch1o2b7mCsM/SZzoe/k3jNGESqRdRzplJhWCmDLzzs9oNUjTHqJbZe3Dl0jPst32ZaL6a9hainHUG+4EwZQYsSSRDMWRR5WTHmb8ZN+VbvUTAOyUAN9CEU4EuPPQqmaJF6UXvlQ1gZ8VMbA6PisgqCG2xY0lHCKAIKniAYJ5SVv+XJGy9lhcshBsGUKlgeFU++v6i9+DTeEmW1GIWLqVs6y6KolKZH6j49ec0YIxwxgkwupZKrZcPmi6GtFXMVclgdLVYuSZxfPcNgb75UMcH5sW3GRDKnWwasGIOVeqmEUNJI0DFFy+IS4BgYFRdR33LOWCf1zk6akfWuvbVipev6ZqDYVVts5aufIVMxxiyxFQNFTN0OPB52+0EqxuQ+7PemgxHETHkggcX6sCtVY4wWbjBZQi2brO1deyvGmOjUbqIKM+Dnor2fDfCaMdWnWb2ay5PDh6ylxPYYmP9xtV6cONOH3PnwowFeKVZ6+CM94PrXnOVqPQg2Xu2mqzIarpaHZwuD6UjuqqmZv+XJ+TjuUyRMEb4WT75s8iY5GMbKCA6W53Ilnc9JtXcMrJwqqofPY132+0qP4/1jW9aKXaeKR9LpaC79136+lRU1Y8//1TzYgz3YgwXGfgHxKhs5+VAFCAAAAABJRU5ErkJggg==","isIntent":null,"isQr":"Y","isUOV":null,"mandateType":null,"mopType":"UP","paymentType":"UP","paymentsRegion":null,"pgRefHash":"1F9EDE50E1C14ED6177110EEFF4B0A112495AC797E14B738015A087CD9DADB27","pgRefNum":"6295660220143007","responseCode":"000","responseFields":{"RETURN_URL":"https://www.wps.irctc.co.in/eticketing/BankResponse","encdata":"200DA7FE6BDD9C4E7027BB061BC860E8E2FC237E31B720D7CFE50BE083814773CCEEE53A58D6347DA9F2DC387F2ADD8F79E2352009F4EEDF3DA0CB2D0452DC83560883E6FC952E35ACB4B62AE690CC7E2939E837F4DBD646784EFA31FAE4DA8285934DF75B7363943CD9516DD63522B27ABFF643BF1C01BD325E7CD1D0A562E9DD71BC2D2FA1FDC233DF8E25E08FFEA02574EF754884AD903327B52551EBCC6CA47D15C535A6566D0778B1868344744C6ED0E2CBBBD43B442D86D7DD0782E5A3E578983D0EE0CEBF669BBD49614C1AD281337438987BCC41FBCE159B61470C54ECC7A7803F1227E980CE52FF42D034E261161D11795F956885380FF729ECFB24B6C57D923DF8374BFD4C9F829FC18B1A9B4E46308175DC78B935A287571D4032"},"responseMessage":"SUCCESS","serviceProvider":null,"transactionStatus":"Sent to Bank","txnType":"UP","uovUrl":null,"vpa":null,"vpaPhone":null}
