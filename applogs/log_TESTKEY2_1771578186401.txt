@@ -1,0 +1,5 @@
+[INFO]:PR1::BWN_KAN_53047_2S_GN_1P_NetworkMonitor_https://www.irctc.co.in/nget/train-search_URL: https://www.irctc.co.in/authprovider/webtoken
+Payload:
+grant_type=password&data=2i0i6JHvwhmVfGsIbDGd9FjrrBDHIVYtqlI6GGz3MUsukP8Eu4so2tQ3gKmmLTXlaIqdOMB8j/Xzei09DMenuw==&captcha=NA&uid=1771578178897:cc94cd4d-e1ba-4aeb-9737-142c90aabadc&otpLogin=false&encodedPwd=true
+Response:
+{"access_token":"4a6910fd-8bf5-4712-9ea9-1e714d1ac128","token_type":"bearer","refresh_token":"DF44CEEA67B2D1DD1E4ADAAC4037A318","expires_in":530}
