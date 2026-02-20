@@ -1,0 +1,5 @@
+[INFO]:PR2::NDLS_CPR_12566_1P_NetworkMonitor_https://www.irctc.co.in/nget/train-search_URL: https://www.irctc.co.in/authprovider/webtoken
+Payload:
+grant_type=password&data=0sWd9mik4gVa62HyqmrrsXdhODt4MLF+dvAWFw6nYI3SKCcAFZ7DxTc2hvf0SmSF&captcha=NA&uid=1771577896775:a01f1deb-9673-44ae-809f-60c240761ed2&otpLogin=false&encodedPwd=true
+Response:
+{"access_token":"75e0b8ee-a90d-44ff-ad20-c02d2c34c43a","token_type":"bearer","refresh_token":"D73214572414A87712D7E6A34F82A5AD","expires_in":1799}
