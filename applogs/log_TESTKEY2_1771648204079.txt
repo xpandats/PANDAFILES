@@ -1,0 +1,13 @@
+[INFO]:PR1::HWH_ST_12834_SL_PT_2P_NetworkMonitor_https://www.irctc.co.in/nget/booking/train-list_URL: https://www.irctc.co.in/eticketing/protected/mapps1/avlFarenquiry/12834/20260222/HWH/ST/3A/TQ/N
+Payload:
+NULL
+Response:
+<!doctype html>
+    <html>
+    <body>
+        <div>
+            <hr>
+            <p>Unable to Process Request!    0.c6f5d217.1771648203.baea60fe     Client IP: 103.157.8.241 </p>
+        </div>
+    </body>
+    </html>
