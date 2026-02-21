@@ -1,0 +1,5 @@
+[INFO]:PR1::HWH_ST_12834_SL_PT_2P_NetworkMonitor_https://www.irctc.co.in/nget/payment/bkgPaymentOptions_URL: https://www.wps.irctc.co.in/eticketing/protected/profile/numberToText/1771648485626
+Payload:
+NULL
+Response:
+5140
