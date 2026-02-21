@@ -1,0 +1,14 @@
+[INFO]:PR2::BWN_KAN_53047_2S_GN_1P_NetworkMonitor_https://www.irctc.co.in/nget/error_URL: https://www.irctc.co.in/authprovider/webtoken
+Payload:
+grant_type=password&data=VTSLvvxfAh2H1pCg8NI7llXaaaR2DYuRjkUGxSjWXao2hfp78t8Cwln4XRsOpiEvqnIS39kKfwysL6An7m6HuA==&captcha=NA&uid=1771659044657:6a76e37c-2b93-4716-a90e-a65027d732c8&otpLogin=false&encodedPwd=true
+Response:
+<HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;www&#46;irctc&#46;co&#46;in&#47;authprovider&#47;webtoken" on this server.<P>
+Reference&#32;&#35;18&#46;c7f5d217&#46;1771659049&#46;aa02de65
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;c7f5d217&#46;1771659049&#46;aa02de65</P>
+</BODY>
+</HTML>
