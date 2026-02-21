@@ -1,0 +1,5 @@
+[INFO]:PR1::BWN_KAN_53047_2S_GN_1P_NetworkMonitor_https://www.irctc.co.in/nget/error_URL: https://www.irctc.co.in/eticketing/protected/mapps1/addonServices
+Payload:
+{"captchaAns":"dNJka","captchaType":"BOOKINGWS","clientTxnId":"mlwkknrc","paymentType":2,"addonLapServices":[{"travelInsuranceOpted":true}]}
+Response:
+{"error":"invalid_token","error_description":"Access token expired: 266c4f37-7609-4040-9a4d-9b732c2968c4"}
