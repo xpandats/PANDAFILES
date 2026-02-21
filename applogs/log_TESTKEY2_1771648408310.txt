@@ -1,0 +1,5 @@
+[INFO]:PR2::HWH_ST_12834_SL_PT_2P_NetworkMonitor_https://www.irctc.co.in/nget/train-search_URL: https://www.irctc.co.in/authprovider/webtoken
+Payload:
+grant_type=password&data=p1yZj+Rb1MxOtdgR4j8YOWyvvV+wB9PfocWOjrFh7CPsMjZaWROYw1xlyOLuJprdD+6K8/whQ7IoT3CetABnJw==&captcha=NA&uid=1771648401723:5ab35578-390f-46c8-b4df-e67e473e0f12&otpLogin=false&encodedPwd=true
+Response:
+{"access_token":"9b08c141-38a9-4cac-878b-4f3b0f6cd5a8","token_type":"bearer","refresh_token":"71CC0603C484CCDF024DDA7274A735B2","expires_in":1748}
