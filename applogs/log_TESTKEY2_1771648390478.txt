@@ -1,0 +1,5 @@
+[INFO]:PR2::HWH_ST_12834_SL_PT_2P_NetworkMonitor_NULL_URL_URL: https://www.irctc.co.in/eticketing/protected/mapps1/avlFarenquiry/12834/20260222/HWH/ST/3A/TQ/N
+Payload:
+{"paymentFlag":"N","concessionBooking":false,"ftBooking":false,"loyaltyRedemptionBooking":false,"ticketType":"E","quotaCode":"TQ","moreThanOneDay":true,"returnJourney":false,"trainNumber":"12834","fromStnCode":"HWH","toStnCode":"ST","isLogedinReq":true,"journeyDate":"20260222","classCode":"3A"}
+Response:
+{"reqEnqParam":"12834#HWH#ST#HWH#3A","quota":"TQ","enqClass":"3A","from":"HWH","to":"ST","trainNo":"12834","errorMessage":"There seems to be a connection issue with your request. please try after some time","errorIndex":"50074","travelInsuranceCharge":"0.0","travelInsuranceServiceTax":"0.0","insuredPsgnCount":"0","timeStamp":"2026-02-21T10:03:09.664","otpAuthenticationFlag":"0","reTry":"false","taRdsFlag":"false","upiRdsFlag":"false","rdsTxnPwdFlag":"false","ftBookingMsgFlag":"false"}
