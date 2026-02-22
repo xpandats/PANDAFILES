@@ -1,0 +1,5 @@
+[INFO]:PR1::RTM_PNVL_12432_3A_GN_2P_NetworkMonitor_https://www.irctc.co.in/nget/train-search_URL: https://www.irctc.co.in/authprovider/webtoken
+Payload:
+grant_type=password&data=9f4504A2idfUwe/fK/4zJz4+01bsgZR+oQLgDigAIozOQKDMmUE3PA0tb2LKyZD5XanQxl5ktvFO2c/seHxfHg==&captcha=NA&uid=1771763563511:9b6f69e1-7c28-41d5-a877-58426df7d83e&otpLogin=false&encodedPwd=true
+Response:
+{"access_token":"943d467c-98c5-444b-870a-d8b4f4da61cf","token_type":"bearer","refresh_token":"DF44CEEA67B2D1DD1E4ADAAC4037A318","expires_in":1549}
