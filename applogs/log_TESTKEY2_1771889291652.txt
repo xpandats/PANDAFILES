@@ -1,0 +1,18 @@
+[INFO]:PR1::BWN_KAN_53047_2S_GN_1P_NetworkMonitor_https://www.irctcipay.com/pgui/jsp/surchargePaymentPage.jsp_URL: https://www.irctcipay.com/pgui/jsp/verifyUpiResponse
+Payload:
+------WebKitFormBoundarycIZ4kM8tyF7niISM
+Content-Disposition: form-data; name="token"
+
+QKI51B37OEIT9ELR5N9PQS38IAY2F0G9
+------WebKitFormBoundarycIZ4kM8tyF7niISM
+Content-Disposition: form-data; name="pgRefNum"
+
+1054560224045814
+------WebKitFormBoundarycIZ4kM8tyF7niISM
+Content-Disposition: form-data; name="pgRefHash"
+
+39E934AE84ABC8E98B6C2C222FC9629C1BF8486BB3013EF05D2ADB4D6A883DB7
+------WebKitFormBoundarycIZ4kM8tyF7niISM--
+
+Response:
+{}
