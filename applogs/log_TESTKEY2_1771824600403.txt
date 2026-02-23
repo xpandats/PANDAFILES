@@ -1,0 +1,13 @@
+[INFO]:PR2::NDLS_CPR_12566_3A_PT_2P_NetworkMonitor_https://www.irctc.co.in/nget/booking/train-list_URL: https://www.irctc.co.in/eticketing/protected/mapps1/avlFarenquiry/12566/20260224/NDLS/CPR/SL/TQ/N
+Payload:
+{"paymentFlag":"N","concessionBooking":false,"ftBooking":false,"loyaltyRedemptionBooking":false,"ticketType":"E","quotaCode":"TQ","moreThanOneDay":true,"returnJourney":false,"trainNumber":"12566","fromStnCode":"NDLS","toStnCode":"CPR","isLogedinReq":true,"journeyDate":"20260224","classCode":"SL"}
+Response:
+<!doctype html>
+    <html>
+    <body>
+        <div>
+            <hr>
+            <p>Unable to Process Request!    0.bff5d217.1771824599.7383185e     Client IP: 103.157.8.241 </p>
+        </div>
+    </body>
+    </html>
