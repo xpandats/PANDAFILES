@@ -1,0 +1,13 @@
+[INFO]:PR1::NDLS_CPR_12566_3A_PT_2P_NetworkMonitor_https://www.irctc.co.in/nget/train-search_URL: https://www.irctc.co.in/authprovider/webtoken
+Payload:
+grant_type=password&data=LyXRnSypnWMGlUL3cnm2qUCWpN7TqP4VFp+6g7dM2/SW8Gh0RhmX7nrXmRcSuo6Boeefrqf+oWM1FhPlnntSXg==&captcha=NA&uid=1771824533421:af188406-8911-445b-bd1d-8243809a06b6&otpLogin=false&encodedPwd=true
+Response:
+<!doctype html>
+    <html>
+    <body>
+        <div>
+            <hr>
+            <p>Unable to Process Request !!    0.bcf5d217.1771824539.e90eba3f     Client IP: 103.157.8.241 </p>
+        </div>
+    </body>
+    </html>
