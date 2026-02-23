@@ -1,0 +1,5 @@
+[INFO]:PR3::NDLS_CPR_12566_1P_NetworkMonitor_https://www.irctc.co.in/nget/train-search_URL: https://www.irctc.co.in/authprovider/webtoken
+Payload:
+grant_type=password&data=jd9ZO+ffq5gTrZkYkg7haYBNp4dHCT9QQq+bSwd2ef7P940GnYj6PaJwm0wfik7p&captcha=NA&uid=1771862175142:7c93e4a3-4ff1-4022-849a-5812f07c0d20&otpLogin=false&encodedPwd=true
+Response:
+{"error":"unauthorized","error_description":"Incorrect UserName or Password. If you have recently changed it, use the latest one. You have 4 attempts remaining."}
