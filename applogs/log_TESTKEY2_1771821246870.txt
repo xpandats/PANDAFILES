@@ -1,0 +1,13 @@
+[INFO]:PR1::NDLS_CPR_12566_3A_PT_2P_NetworkMonitor_https://www.irctc.co.in/nget/booking/psgninput_URL: https://www.irctc.co.in/eticketing/protected/mapps1/allLapAvlFareEnq/Y
+Payload:
+NULL
+Response:
+<!doctype html>
+    <html>
+    <body>
+        <div>
+            <hr>
+            <p>Unable to Process Request !!    0.cdf5d217.1771821246.942fd043     Client IP: 103.157.8.241 </p>
+        </div>
+    </body>
+    </html>
