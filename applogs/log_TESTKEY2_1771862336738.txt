@@ -1,0 +1,14 @@
+[INFO]:PR3::BWN_KAN_53047_2S_GN_1P_NetworkMonitor_https://www.irctc.co.in/nget/error_URL: https://www.irctc.co.in/eticketing/protected/mapps1/allLapAvlFareEnq/Y
+Payload:
+{"clusterFlag":"N","onwardFlag":"N","cod":"false","reservationMode":"WS_TA_B2C","autoUpgradationSelected":true,"gnToCkOpted":false,"paymentType":"2","twoPhaseAuthRequired":false,"captureAddress":0,"wsUserLogin":"Pankaj9771665","moreThanOneDay":false,"clientTransactionId":"mlzd25ii","boardingStation":"BWN","reservationUptoStation":"KAN","mobileNumber":"9877484774","ticketType":"E","mainJourneyTxnId":null,"mainJourneyPnr":"","captcha":"","generalistChildConfirm":false,"ftBooking":false,"loyaltyRedemptionBooking":false,"loyaltyBankId":null,"loyaltyNumber":null,"nosbBooking":false,"warrentType":0,"ftTnCAgree":false,"bookingChoice":1,"bookingConfirmChoice":1,"bookOnlyIfCnf":false,"returnJourney":false,"connectingJourney":false,"noFood":false,"lapAvlRequestDTO":[{"trainNo":"53047","journeyDate":"20260225","fromStation":"BWN","toStation":"KAN","journeyClass":"2S","quota":"GN","coachId":null,"reservationChoice":"99","ignoreChoiceIfWl":true,"travelInsuranceOpted":"true","warrentType":0,"coachPreferred":false,"autoUpgradation":false,"bookOnlyIfCnf":false,"addMealInput":null,"concessionBooking":false,"passengerList":[{"passengerName":"DEEPALI","passengerAge":24,"passengerGender":"F","passengerBerthChoice":"","passengerFoodChoice":null,"passengerBedrollChoice":null,"passengerNationality":"IN","passengerCardTypeMaster":null,"passengerCardNumberMaster":null,"psgnConcType":null,"psgnConcCardId":null,"psgnConcDOB":null,"psgnConcCardExpiryDate":null,"psgnConcDOBP":null,"softMemberId":null,"softMemberFlag":null,"psgnConcCardExpiryDateP":null,"passengerVerified":false,"masterPsgnId":null,"mpMemberFlag":null,"passengerForceNumber":null,"passConcessionType":"0","passUPN":null,"passBookingCode":null,"passengerSerialNumber":1,"childBerthFlag":true,"passengerCardType":"NULL_IDCARD","passengerIcardFlag":false,"passengerCardNumber":null}],"ssQuotaSplitCoach":"Y"}],"gstDetails":{"gstIn":"","error":null}}
+Response:
+<HTML><HEAD>
+<TITLE>Access Denied</TITLE>
+</HEAD><BODY>
+<H1>Access Denied</H1>
+ 
+You don't have permission to access "http&#58;&#47;&#47;www&#46;irctc&#46;co&#46;in&#47;eticketing&#47;protected&#47;mapps1&#47;allLapAvlFareEnq&#47;Y" on this server.<P>
+Reference&#32;&#35;18&#46;a65dd217&#46;1771862335&#46;2bd60e8f
+<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;a65dd217&#46;1771862335&#46;2bd60e8f</P>
+</BODY>
+</HTML>
