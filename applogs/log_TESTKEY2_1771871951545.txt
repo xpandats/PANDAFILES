@@ -1,0 +1,5 @@
+[INFO]:PR1::BWN_KAN_53047_2S_GN_1P_NetworkMonitor_https://www.irctc.co.in/nget/train-search_URL: https://www.irctc.co.in/eticketing/protected/mapps1/altAvlEnq/TC
+Payload:
+{"concessionBooking":false,"srcStn":"BWN","destStn":"KAN","jrnyClass":"","jrnyDate":"20260225","quotaCode":"GN","currentBooking":"false","flexiFlag":false,"handicapFlag":false,"ticketType":"E","loyaltyRedemptionBooking":false,"ftBooking":false}
+Response:
+{"errorMessage":"Currently services are not available due to daily maintenance downtime. Services will resume at 00:20 hrs.","timeStamp":"2026-02-24T00:09:10.812","vikalpInSpecialTrainsAccomFlag":"false","serveyFlag":"false","alternateEnquiryFlag":"false"}
