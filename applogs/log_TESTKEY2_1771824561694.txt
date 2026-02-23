@@ -1,0 +1,1 @@
+[INFO]:PR2::NDLS_CPR_12566_3A_PT_2P_NetworkMonitor_https://www.irctc.co.in/nget/booking/train-list_LogToApi Failed (Size:2028): Server error
