@@ -1,0 +1,5 @@
+[INFO]:PR1::BWN_KAN_53047_2S_GN_1P_NetworkMonitor_https://www.irctc.co.in/nget/payment/bkgPaymentOptions_URL: https://www.wps.irctc.co.in/eticketing/protected/profile/numberToText/1771881129189
+Payload:
+NULL
+Response:
+5213
