@@ -1,0 +1,5 @@
+[INFO]:PR2::NDLS_CPR_12566_3A_PT_2P_NetworkMonitor_https://www.wps.irctc.co.in/eticketing/PaymentRedirect_URL: https://www.irctc.co.in/eticketing/protected/mapps1/bookingInitPayment/mlyoh6gf?insurenceApplicable=
+Payload:
+{"bankId":113,"txnType":1,"paramList":[],"amount":"3504.5","transationId":0,"txnStatus":1}
+Response:
+{"transationId":"0","bankId":"113","txnType":"0","txnStatus":"12","txnDate":"2026-02-23T10:01:35.348","amount":"3504.5","timeStamp":"2026-02-23T10:01:35.38","upiModeOpted":"0","remainingBalance":"0.0","loyaltyNum":"0","withoutOTP":"false","paramList":[{"key":"TXN","value":"100006394122954"},{"key":"REDIRECT","value":"TRUE"},{"key":"SEGREGATE_BOOKING_ENQUIRY","value":"1"},{"key":"MIN_PAYMENT_DURATION","value":"10000"}]}
