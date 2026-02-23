@@ -1,0 +1,5 @@
+[INFO]:PR1::BWN_KAN_53047_2S_GN_1P_NetworkMonitor_https://www.wps.irctc.co.in/eticketing/PaymentRedirect_URL: https://www.irctc.co.in/eticketing/protected/mapps1/bookingInitPayment/mlzqtqmo?insurenceApplicable=
+Payload:
+{"bankId":113,"txnType":1,"paramList":[],"amount":"32.25","transationId":0,"txnStatus":1}
+Response:
+{"transationId":"0","bankId":"113","txnType":"0","txnStatus":"12","txnDate":"2026-02-24T03:54:22.013","amount":"32.25","timeStamp":"2026-02-24T03:54:22.046","upiModeOpted":"0","remainingBalance":"0.0","loyaltyNum":"0","withoutOTP":"false","paramList":[{"key":"TXN","value":"100006395908964"},{"key":"REDIRECT","value":"TRUE"},{"key":"SEGREGATE_BOOKING_ENQUIRY","value":"1"},{"key":"MIN_PAYMENT_DURATION","value":"10000"}]}
