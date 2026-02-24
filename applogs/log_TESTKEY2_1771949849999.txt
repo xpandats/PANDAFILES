@@ -1,0 +1,18 @@
+[INFO]:PR1::BWN_KAN_53047_2S_GN_2P_NetworkMonitor_https://www.irctc.co.in/nget/booking-confirm_URL: https://www.irctcipay.com/pgui/jsp/verifyUpiResponse
+Payload:
+------WebKitFormBoundaryle2FTqtS6m4QSeEA
+Content-Disposition: form-data; name="token"
+
+FIU1UXW21FKWL0BVCJCHSKL9MYD4ZCE3
+------WebKitFormBoundaryle2FTqtS6m4QSeEA
+Content-Disposition: form-data; name="pgRefNum"
+
+1303260224214713
+------WebKitFormBoundaryle2FTqtS6m4QSeEA
+Content-Disposition: form-data; name="pgRefHash"
+
+3AB4A39FFF622969292262D1A95A744A16DEE2400BBE16FC7BF588B88A59EA6F
+------WebKitFormBoundaryle2FTqtS6m4QSeEA--
+
+Response:
+{}
