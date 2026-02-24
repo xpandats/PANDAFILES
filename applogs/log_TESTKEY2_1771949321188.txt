@@ -1,0 +1,5 @@
+[INFO]:PR1::NDLS_CPR_12566_1P_NetworkMonitor_NULL_URL_URL: https://www.irctc.co.in/eticketing/protected/mapps1/avlFarenquiry/22412/20260301/ANVT/CPR/3E/TQ/N
+Payload:
+{"paymentFlag":"N","concessionBooking":false,"ftBooking":false,"loyaltyRedemptionBooking":false,"ticketType":"E","quotaCode":"TQ","moreThanOneDay":true,"returnJourney":false,"trainNumber":"22412","fromStnCode":"ANVT","toStnCode":"CPR","isLogedinReq":true,"journeyDate":"20260301","classCode":"3E"}
+Response:
+{"reqEnqParam":"22412#ANVT#CPR#ANVT#3E","quota":"TQ","enqClass":"3E","from":"ANVT","to":"CPR","trainNo":"22412","errorMessage":"Date outside Tatkal ARP- (50018)\n","serverId":"DM04AP19MS1","timeStamp":"2026-02-24T21:38:40.455","otpAuthenticationFlag":"0","taRdsFlag":"false","upiRdsFlag":"false","rdsTxnPwdFlag":"false","ftBookingMsgFlag":"false"}
