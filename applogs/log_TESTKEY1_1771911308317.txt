@@ -1,0 +1,5 @@
+[INFO]:PR1::SRC_NMO_12768_SL_PT_1P_NetworkMonitor_https://www.irctc.co.in/nget/train-search_URL: https://www.irctc.co.in/authprovider/webtoken
+Payload:
+grant_type=password&data=VtGp7ZuLXDeeleCKZpFnRWYU0DpFHDmuTdgyKqzxpuwCWA+tLZSXM4iy6ED8T+17H8IEglAJSyj/vbj7tpCjug==&captcha=NA&uid=1771910699654:01a2171b-d554-442e-b560-26f2ecb1d12c&otpLogin=false&encodedPwd=true
+Response:
+{"access_token":"6413e29c-b35c-491c-bd97-e700248b023d","token_type":"bearer","refresh_token":"773E30750B10209E6C0F7E0EADAF2A6B","expires_in":1799}
