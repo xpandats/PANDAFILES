@@ -1,0 +1,1 @@
+[ERROR]:PR1::NDLS_CPR_12566_1P_Orchestrator_NULL_URL_No direct trains available between the inputted stations. Would you like to search the in-direct journey trains? (Only enquiry is available currently.)
