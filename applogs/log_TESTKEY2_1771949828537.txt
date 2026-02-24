@@ -1,0 +1,5 @@
+[INFO]:PR1::BWN_KAN_53047_2S_GN_2P_NetworkMonitor_https://www.irctcipay.com/pgui/jsp/surchargelocale?request_localeA=&defaultLanguageA=_URL: https://www.wps.irctc.co.in/eticketing/PaymentRedirect
+Payload:
+token=9edbcc78-6e38-4639-aeb7-7aa0ca24e4a2&txn=KASHI943420%3Amm0t5an1&KASHI943420%3Amm0t5an1=440073419.405569261771949827124-7125384782395090.4947658163
+Response:
+{}
