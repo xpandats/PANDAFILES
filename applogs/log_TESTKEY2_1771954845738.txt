@@ -1,0 +1,42 @@
+[INFO]:PR1::BWN_KAN_53047_2S_GN_2P_NetworkMonitor_https://www.irctcipay.com/pgui/jsp/surchargePaymentPage.jsp_URL: https://www.irctcipay.com/pgui/jsp/upiPay
+Payload:
+------WebKitFormBoundaryHKDZ9HGbLaAC2pNS
+Content-Disposition: form-data; name="token"
+
+HK4GH5KCDLI7NUGXKFF2L8OOLEJTWRAW
+------WebKitFormBoundaryHKDZ9HGbLaAC2pNS
+Content-Disposition: form-data; name="vpa"
+
+test@test
+------WebKitFormBoundaryHKDZ9HGbLaAC2pNS
+Content-Disposition: form-data; name="upiCustName"
+
+dummy
+------WebKitFormBoundaryHKDZ9HGbLaAC2pNS
+Content-Disposition: form-data; name="paymentType"
+
+UP
+------WebKitFormBoundaryHKDZ9HGbLaAC2pNS
+Content-Disposition: form-data; name="mopType"
+
+UP
+------WebKitFormBoundaryHKDZ9HGbLaAC2pNS
+Content-Disposition: form-data; name="amount"
+
+₹ 52.70
+------WebKitFormBoundaryHKDZ9HGbLaAC2pNS
+Content-Disposition: form-data; name="currencyCode"
+
+356
+------WebKitFormBoundaryHKDZ9HGbLaAC2pNS
+Content-Disposition: form-data; name="browserName"
+
+Chrome
+------WebKitFormBoundaryHKDZ9HGbLaAC2pNS
+Content-Disposition: form-data; name="browserVersion"
+
+141
+------WebKitFormBoundaryHKDZ9HGbLaAC2pNS--
+
+Response:
+{"browserName":"Chrome","browserVersion":"141","cardHolderType":null,"cardNumber":null,"imageData":null,"isIntent":null,"isQr":null,"isUOV":null,"mandateType":null,"mopType":"UP","paymentType":"UP","paymentsRegion":null,"pgRefHash":"D609734FB7FC59D80CA782B1D6CCB8E502BF0C35FACA169D317E8D5F82F5FB51","pgRefNum":"1284560224231057","responseCode":"366","responseFields":{"RETURN_URL":"https://www.wps.irctc.co.in/eticketing/BankResponse","encdata":"200DA7FE6BDD9C4E7027BB061BC860E8E2FC237E31B720D7CFE50BE083814773CCEEE53A58D6347DA9F2DC387F2ADD8F585D5A1AA570C80F1F1AFA52655D6894C36C65E0EF77162D4C04F93E0D8A025B042C40AEC06B40507C66576280D6A6FB109160DCCD31EB92C4C1C48F0C5B70E00C91AB9957213CC946FD42CA39F93173B0195DDB422F38EF15B9B1E3519E85157AE1545781EC171CA598489F2DAAD807C0CAE1DCF8C62F7A581905ED8AA3E073F85E7A85B3E5516166A8C9C89CB8B530D417DA4531D1BD02617E64DC35C9559AB6E482F29D53C854EDDF0BE3106E037D9BA8CA9B2109CAA9D8316FE502E7E9F53C7C4884D138E91054F8FAE71B8B1148DB3E3F3FA0F59A9F3627C4ED6C4654EFD5AB13B9AF072129A44BC3810C06C6869DE528EC8EAC298271BDE9CBF6984540"},"responseMessage":"Invalid VPA address For Pay","serviceProvider":null,"transactionStatus":"Rejected","txnType":"UP","uovUrl":null,"vpa":"test@test","vpaPhone":null}
