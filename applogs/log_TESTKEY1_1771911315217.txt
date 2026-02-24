@@ -1,0 +1,5 @@
+[INFO]:PR1::SRC_NMO_12768_SL_PT_1P_NetworkMonitor_https://www.irctc.co.in/nget/train-search_URL: https://www.irctc.co.in/eticketing/protected/mapps1/altAvlEnq/TC
+Payload:
+{"srcStn":"SRC","destStn":"NMO","jrnyClass":"","jrnyDate":"20260225","quotaCode":"PT","currentBooking":"false","flexiFlag":false,"handicapFlag":false,"ticketType":"E","loyaltyRedemptionBooking":false,"ftBooking":false}
+Response:
+{"errorMessage":"No direct trains available between the inputted stations. Would you like to search the in-direct journey trains? (Only enquiry is available currently.)","timeStamp":"2026-02-24T11:05:14.417","vikalpInSpecialTrainsAccomFlag":"false","oneStopJourny":"true","serveyFlag":"false","alternateEnquiryFlag":"false"}
