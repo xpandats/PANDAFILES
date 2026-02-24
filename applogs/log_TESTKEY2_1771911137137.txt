@@ -1,0 +1,5 @@
+[INFO]:PR2::NDLS_CPR_12566_3A_PT_2P_NetworkMonitor_https://www.irctcipay.com/pgui/jsp/surchargelocale?request_localeA=&defaultLanguageA=_URL: https://www.wps.irctc.co.in/eticketing/PaymentRedirect
+Payload:
+token=aed6b4ea-4014-47da-a0a6-a25c41aba90b&txn=FKV06I%3Amm062kr9&FKV06I%3Amm062kr9=99773928.524277821771911116658-158531457126038306.55824013
+Response:
+{}
