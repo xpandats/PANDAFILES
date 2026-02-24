@@ -1,0 +1,13 @@
+[INFO]:PR1::SRC_NMO_12768_SL_PT_1P_NetworkMonitor_https://www.irctc.co.in/nget/train-search_URL: https://www.irctc.co.in/authprovider/webtoken
+Payload:
+grant_type=password&data=VtGp7ZuLXDeeleCKZpFnRWYU0DpFHDmuTdgyKqzxpuwdUX/8vs18skcgTNBJC1+8YqHqU88VVkXKkyWrbJpMeg==&captcha=NA&uid=1771910699654:01a2171b-d554-442e-b560-26f2ecb1d12c&otpLogin=false&encodedPwd=true
+Response:
+<!doctype html>
+    <html>
+    <body>
+        <div>
+            <hr>
+            <p>Unable to Process Request !!    0.9e89d317.1771910703.7d38178b     Client IP: 2401:4900:3a26:e0a7:2807:fe9d:c3e:3c49 </p>
+        </div>
+    </body>
+    </html>
