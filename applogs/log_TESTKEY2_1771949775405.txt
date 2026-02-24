@@ -1,0 +1,1 @@
+[INFO]:PR1::BWN_KAN_53047_2S_GN_2P_NetworkMonitor_https://www.irctc.co.in/nget/train-search_LogToApi Failed (Size:519): Server error
