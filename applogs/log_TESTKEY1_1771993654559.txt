@@ -1,0 +1,5 @@
+[INFO]:PR2::MCA_LTT_18030_3A_PT_1P_NetworkMonitor_https://www.irctc.co.in/nget/train-search_URL: https://www.irctc.co.in/authprovider/webtoken
+Payload:
+grant_type=password&data=ik1YBBXJLq72/mK/jBSSdMzD42U9aKaQ0HrQnVPGb2FfB6ocgaHz6/1SG68ol/w/7ODZzRA1N3zsIcqJ0C7Emw==&captcha=NA&uid=1771993649736:b5bd63c0-b2c5-41f1-89a1-d8f1267dd905&otpLogin=false&encodedPwd=true
+Response:
+{"access_token":"c9aaf62e-31c1-4420-beaa-ca787ca43665","token_type":"bearer","refresh_token":"6DE64AE00EAB876379C23DE9DE60D0E0","expires_in":1799}
