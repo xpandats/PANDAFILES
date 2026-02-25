@@ -1,0 +1,18 @@
+[INFO]:PR1::BWN_KAN_53047_2S_GN_2P_NetworkMonitor_URL: https://www.irctcipay.com/pgui/jsp/verifyUpiResponse
+Payload:
+------WebKitFormBoundaryhbdWyIiMvz9iHogA
+Content-Disposition: form-data; name="token"
+
+A3AZ709MBYRGS8BP7BKQPZJCXB9Z0QLW
+------WebKitFormBoundaryhbdWyIiMvz9iHogA
+Content-Disposition: form-data; name="pgRefNum"
+
+2885560225064530
+------WebKitFormBoundaryhbdWyIiMvz9iHogA
+Content-Disposition: form-data; name="pgRefHash"
+
+52949758C0CE2B3933A81CECACB0060F01FA6108683F8A78C67026769524CDB3
+------WebKitFormBoundaryhbdWyIiMvz9iHogA--
+
+Response:
+{}
