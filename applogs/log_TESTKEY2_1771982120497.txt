@@ -1,0 +1,26 @@
+[INFO]:PR1::BWN_KAN_53047_2S_GN_2P_NetworkMonitor_URL: https://www.irctcipay.com/pgui/jsp/validateTransactionLimitAction
+Payload:
+------WebKitFormBoundaryXewjNInxGSyH5tdu
+Content-Disposition: form-data; name="token"
+
+A3AZ709MBYRGS8BP7BKQPZJCXB9Z0QLW
+------WebKitFormBoundaryXewjNInxGSyH5tdu
+Content-Disposition: form-data; name="vpa"
+
+ddsd12@ybl
+------WebKitFormBoundaryXewjNInxGSyH5tdu
+Content-Disposition: form-data; name="cardNumber"
+
+null
+------WebKitFormBoundaryXewjNInxGSyH5tdu
+Content-Disposition: form-data; name="paymentType"
+
+UP
+------WebKitFormBoundaryXewjNInxGSyH5tdu
+Content-Disposition: form-data; name="mopType"
+
+UP
+------WebKitFormBoundaryXewjNInxGSyH5tdu--
+
+Response:
+{"browserName":null,"browserVersion":null,"cardHolderType":null,"cardNumber":"null","imageData":null,"isIntent":null,"isQr":null,"isUOV":null,"mandateType":null,"mopType":"UP","paymentType":"UP","paymentsRegion":null,"pgRefHash":null,"pgRefNum":null,"responseCode":null,"responseFields":null,"responseMessage":null,"serviceProvider":null,"transactionStatus":null,"txnType":null,"uovUrl":null,"vpa":"ddsd12@ybl","vpaPhone":null}
