@@ -1,0 +1,5 @@
+[INFO]:PR1::MCA_LTT_18030_3A_PT_1P_NetworkMonitor_https://www.irctc.co.in/nget/train-search_URL: https://www.irctc.co.in/eticketing/protected/mapps1/altAvlEnq/TC
+Payload:
+{"srcStn":"MCA","destStn":"LTT","jrnyClass":"","jrnyDate":"20260226","quotaCode":"PT","currentBooking":"false","flexiFlag":false,"handicapFlag":false,"ticketType":"E","loyaltyRedemptionBooking":false,"ftBooking":false}
+Response:
+{"trainBtwnStnsList":[{"trainNumber":"18030","trainName":"SHM LTT EXPRESS","fromStnCode":"MCA","toStnCode":"LTT","arrivalTime":"04:20","departureTime":"16:10","distance":"1894","duration":"36:10","runningMon":"Y","runningTue":"Y","runningWed":"Y","runningThu":"Y","runningFri":"Y","runningSat":"Y","runningSun":"Y","avlClasses":["2A","3A","SL"],"trainType":["O"],"atasOpted":"false","flexiFlag":"false","trainOwner":"0","trainsiteId":"C"}],"quotaList":["SS","PT","GN","HP","LD","PH","DP","TQ"],"serverId":"DM05AP23MS4","timeStamp":"2026-02-25T09:56:40.444","vikalpInSpecialTrainsAccomFlag":"false","oneStopJourny":"false","serveyFlag":"false","alternateEnquiryFlag":"false"}
