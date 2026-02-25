@@ -1,1 +1,0 @@
-[ERROR]:PR1::NDLS_CPR_12566_1P_TrainList_NULL_URL_Failed to refresh after booking opened
