@@ -1,1 +1,0 @@
-[ERROR]:PR1::KGP_CBE_22851_3A_PT_1P_PaymentOptions_NULL_URL_STOP_AUTOMATION:Payment Init Error
