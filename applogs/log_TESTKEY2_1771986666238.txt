@@ -1,0 +1,6 @@
+[INFO]:PR2::NDLS_CPR_12566_3A_PT_2P_ResponseBody_[PaymentRedirect]
+URL: https://www.wps.irctc.co.in/eticketing/PaymentRedirect
+Payload:
+token=e53d26e6-0be8-4edf-83cc-ab827b2b18fd&txn=FKV06I%3Amm1f2lvl&FKV06I%3Amm1f2lvl=88242131.525584331771986662358-13264214309659605.288391197
+Response:
+{}
