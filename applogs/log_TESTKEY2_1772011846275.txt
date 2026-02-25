@@ -1,0 +1,3 @@
+[INFO]:PR2::BWN_KAN_53047_2S_GN_2P_ResponseBody_[Login_Webtoken]
+Response:
+{"access_token":"3a28dfef-1695-4b5c-b0d3-bce24073a041","token_type":"bearer","refresh_token":"D73214572414A87712D7E6A34F82A5AD","expires_in":1303}
