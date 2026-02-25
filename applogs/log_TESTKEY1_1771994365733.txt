@@ -1,0 +1,13 @@
+[INFO]:PR1::KGP_CBE_22851_3A_PT_1P_NetworkMonitor_https://www.irctc.co.in/nget/payment/bkgPaymentOptions_URL: https://www.irctc.co.in/eticketing/protected/mapps1/bookingInitPayment/mm1jnyhv?insurenceApplicable=
+Payload:
+{"bankId":113,"txnType":1,"paramList":[],"amount":"6484.05","transationId":0,"txnStatus":1}
+Response:
+<!doctype html>
+    <html>
+    <body>
+        <div>
+            <hr>
+            <p>Unable to Process Request !!    0.224c3917.1771994364.1e13d53e     Client IP: 103.172.153.163 </p>
+        </div>
+    </body>
+    </html>
