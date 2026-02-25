@@ -1,1 +1,0 @@
-[INFO]:PR2::PKU_CHZ_18045_2A_PT_1P_STOPPED_BROWSER_DISPOSED_LogToApi Failed (Size:79): Server error
