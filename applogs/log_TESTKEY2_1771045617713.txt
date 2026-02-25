@@ -1,1 +1,0 @@
-[INFO]:PR2::HWH_ST_12834_SL_PT_2P_STOPPED_BROWSER_DISPOSED_LogToApi Failed (Size:133): Server error
