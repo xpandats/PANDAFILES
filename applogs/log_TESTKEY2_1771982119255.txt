@@ -1,0 +1,5 @@
+[INFO]:PR1::BWN_KAN_53047_2S_GN_2P_NetworkMonitor_URL: https://www.wps.irctc.co.in/eticketing/PaymentRedirect
+Payload:
+token=1b24df71-fbc5-4bc8-ab99-c782bbfd10b4&txn=KASHI943420%3Amm1cdefk&KASHI943420%3Amm1cdefk=33275913.118007311771982117786--11395323013392276.7502914635
+Response:
+{}
