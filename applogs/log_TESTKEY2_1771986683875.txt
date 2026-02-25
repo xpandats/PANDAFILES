@@ -1,0 +1,19 @@
+[INFO]:PR1::NDLS_CPR_12566_3A_PT_2P_ResponseBody_[IPayVerifyUpiResponse]
+URL: https://www.irctcipay.com/pgui/jsp/verifyUpiResponse
+Payload:
+------WebKitFormBoundaryJb8TruzS7PS61ML5
+Content-Disposition: form-data; name="token"
+
+80QOCP0WZ4CO81NRM2E25R0RP3ZMLYF4
+------WebKitFormBoundaryJb8TruzS7PS61ML5
+Content-Disposition: form-data; name="pgRefNum"
+
+8764660225080111
+------WebKitFormBoundaryJb8TruzS7PS61ML5
+Content-Disposition: form-data; name="pgRefHash"
+
+47D010E8B7DB3171097CDA18D0CE6D60B0BCA7AB3BE3471069FD3F1B46876100
+------WebKitFormBoundaryJb8TruzS7PS61ML5--
+
+Response:
+{}
