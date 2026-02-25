@@ -1,0 +1,5 @@
+[INFO]:PR2::KGP_CBE_22851_3A_PT_1P_NetworkMonitor_https://www.irctc.co.in/nget/train-search_URL: https://www.irctc.co.in/authprovider/webtoken
+Payload:
+grant_type=password&data=Tp7i5X1rGNkjF7L29reT0U7l80zFsqLOfmb54Vwr0+wVz4XrUVAL0DZlfg18q+3i&captcha=NA&uid=1771993720510:29a67907-e1b6-4e0f-ad55-6c067a107dfe&otpLogin=false&encodedPwd=true
+Response:
+{"error":"unauthorized","error_description":"Incorrect UserName or Password. If you have recently changed it, use the latest one. You have 4 attempts remaining."}
