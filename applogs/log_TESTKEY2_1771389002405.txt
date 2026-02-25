@@ -1,8 +1,0 @@
-[INFO]:PR1::NDLS_CPR_12566_3A_PT_2P_NetworkMonitor_https://www.irctc.co.in/nget/train-search_URL: https://www.irctc.co.in/eticketing/protected/mapps1/fetchJourneyDetails
-Payload:
-NULL
-Response:
-{
-  "displayCount": "0",
-  "timeStamp": "2026-02-18T09:59:30.968"
-}
