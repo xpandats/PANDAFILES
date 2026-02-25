@@ -1,1 +1,0 @@
-[INFO]:PR1::NDLS_CPR_12566_3A_PT_2P_NetworkMonitor_https://www.irctc.co.in/nget/train-search_LogToApi Failed (Size:620): Server error
