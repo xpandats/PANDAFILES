@@ -1,1 +1,0 @@
-[ERROR]:PR2::NDLS_CPR_12566_3A_PT_2P_PaymentOptions_BROWSER_DISPOSED_Failed to click Pay & Book
