@@ -1,0 +1,13 @@
+[INFO]:PR2::KGP_CBE_22851_3A_PT_1P_NetworkMonitor_https://www.irctc.co.in/nget/train-search_URL: https://www.irctc.co.in/authprovider/webtoken
+Payload:
+grant_type=password&data=Tp7i5X1rGNkjF7L29reT0U7l80zFsqLOfmb54Vwr0+zZwLKZkOERfrpNfza6rM/Q&captcha=NA&uid=1771993720510:29a67907-e1b6-4e0f-ad55-6c067a107dfe&otpLogin=false&encodedPwd=true
+Response:
+<!doctype html>
+    <html>
+    <body>
+        <div>
+            <hr>
+            <p>Unable to Process Request !!    0.4f3cd717.1771993723.aad067d1     Client IP: 2401:4900:7440:492a:9828:2f25:3e98:f80c </p>
+        </div>
+    </body>
+    </html>
