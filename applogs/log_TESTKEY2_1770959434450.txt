@@ -1,1 +1,0 @@
-[INFO]:PR2::HWH_ST_12834_SL_PT_2P_Login_https://www.irctc.co.in/nget/train-search_LogToApi Failed (Size:600266): Server error
